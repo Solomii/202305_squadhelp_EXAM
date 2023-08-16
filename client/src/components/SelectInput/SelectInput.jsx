@@ -36,7 +36,7 @@ const SelectInput = ({
     if (!initialValue && optionsArray) {
       setFieldValue(field.name, valueArray ? valueArray[0] : optionsArray[0]);
     }
-  }, []);
+  }, [initialValue, optionsArray, field.name, valueArray, setFieldValue]);
 
   return (
     <div className={classes.inputContainer}>
