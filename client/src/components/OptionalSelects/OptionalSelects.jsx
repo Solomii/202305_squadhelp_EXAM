@@ -102,7 +102,7 @@ const OptionalSelects = props => {
         </>
       );
     }
-    default:
+    default: return null;
   }
 };
 
