@@ -2,13 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import className from 'classnames';
+import styles from './Dialog.module.sass';
+import ChatHeader from '../../ChatComponents/ChatHeader';
+import ChatInput from '../../ChatComponents/ChatInut';
 import {
   getDialogMessages,
   clearMessageList,
 } from '../../../../store/slices/chatSlice';
-import ChatHeader from '../../ChatComponents/ChatHeader/ChatHeader';
-import styles from './Dialog.module.sass';
-import ChatInput from '../../ChatComponents/ChatInut/ChatInput';
+
 
 class Dialog extends React.Component {
   componentDidMount() {

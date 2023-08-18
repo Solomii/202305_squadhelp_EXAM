@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import styles from './Home.module.sass';
 import Header from '../../components/Header';
 import SlideBar from '../../components/SlideBar';
-import Footer from '../../components/Footer/Footer';
-import Spinner from '../../components/Spinner/Spinner';
+import  Footer  from '../../components/Footer';
+import Spinner from '../../components/Spinner';
 import carouselConstants from '../../carouselConstants';
 import CONSTANTS from '../../constants';
 

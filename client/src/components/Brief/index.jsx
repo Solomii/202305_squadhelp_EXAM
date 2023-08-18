@@ -1,15 +1,15 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import styles from './Brief.module.sass';
+import ContestForm from '../ContestForm';
+import ContestInfo from '../Contest/ContestInfo';
+import Error from '../Error';
 import {
   updateContest,
   clearContestUpdationStore,
 } from '../../store/slices/contestUpdationSlice';
 import { changeEditContest } from '../../store/slices/contestByIdSlice';
-import ContestForm from '../ContestForm/ContestForm';
-import styles from './Brief.module.sass';
-import ContestInfo from '../Contest/ContestInfo/ContestInfo';
-import Error from '../Error/Error';
 
 const Brief = (props) => {
   const setNewContestData = (values) => {

@@ -5,14 +5,14 @@ import LightBox from 'react-image-lightbox';
 import classNames from 'classnames';
 import styles from './ContestPage.module.sass';
 import Header from '../../components/Header';
-import ContestSideBar from '../../components/ContestSideBar/ContestSideBar';
-import OfferBox from '../../components/OfferBox/OfferBox';
-import OfferForm from '../../components/OfferForm/OfferForm';
-import Brief from '../../components/Brief/Brief';
-import Spinner from '../../components/Spinner/Spinner';
-import TryAgain from '../../components/TryAgain/TryAgain';
+import ContestSideBar from '../../components/ContestSideBar';
+import OfferBox from '../../components/OfferBox';
+import OfferForm from '../../components/OfferForm';
+import Brief from '../../components/Brief';
+import Spinner from '../../components/Spinner';
+import TryAgain from '../../components/TryAgain';
 import 'react-image-lightbox/style.css';
-import Error from '../../components/Error/Error';
+import Error from '../../components/Error';
 import { goToExpandedDialog } from '../../store/slices/chatSlice';
 import {
   getContestById,

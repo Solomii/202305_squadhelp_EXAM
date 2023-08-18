@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styles from './StartContestPage.module.sass';
-import BundleBox from '../../components/BundleBox/BundleBox';
-import Footer from '../../components/Footer/Footer';
-import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import BundleBox from '../../components/BundleBox';
+import Footer from '../../components/Footer';
+import ProgressBar from '../../components/ProgressBar';
 import Header from '../../components/Header';
 import { updateBundle } from '../../store/slices/bundleSlice';
 import CONSTANTS from '../../constants';

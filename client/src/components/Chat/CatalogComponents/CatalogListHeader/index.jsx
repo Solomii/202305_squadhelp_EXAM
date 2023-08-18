@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Formik, Form } from 'formik';
+import styles from './CatalogHeader.module.sass';
+import FormInput from '../../../FormInput';
 import {
   changeShowModeCatalog,
   changeRenameCatalogMode,
   changeCatalogName,
 } from '../../../../store/slices/chatSlice';
-import styles from './CatalogHeader.module.sass';
-import FormInput from '../../../FormInput/FormInput';
 import Schems from '../../../../utils/validators/validationSchems';
 
 const CatalogListHeader = (props) => {

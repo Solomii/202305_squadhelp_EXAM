@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getUser } from '../../store/slices/userSlice';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../Spinner';
 
 const WithNotAuth = Component => {
   class WithSignUp extends React.Component {

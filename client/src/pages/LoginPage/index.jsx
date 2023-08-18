@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styles from './LoginPage.module.sass';
-import LoginForm from '../../components/LoginForm/LoginForm';
+import LoginForm from '../../components/LoginForm';
 import Logo from '../../components/Logo';
 import { clearAuthError } from '../../store/slices/authSlice';
 import CONSTANTS from '../../constants';

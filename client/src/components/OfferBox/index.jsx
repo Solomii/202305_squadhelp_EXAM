@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import Rating from 'react-rating';
 import { withRouter } from 'react-router-dom';
 import isEqual from 'lodash/isEqual';
-import classNames from 'classnames';
 import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import classNames from 'classnames';
+import './confirmStyle.css';
+import styles from './OfferBox.module.sass';
 import { goToExpandedDialog } from '../../store/slices/chatSlice';
 import {
   changeMark,
@@ -12,9 +15,6 @@ import {
   changeShowImage,
 } from '../../store/slices/contestByIdSlice';
 import CONSTANTS from '../../constants';
-import styles from './OfferBox.module.sass';
-import 'react-confirm-alert/src/react-confirm-alert.css';
-import './confirmStyle.css';
 
 const OfferBox = (props) => {
   const findConversationInfo = () => {
