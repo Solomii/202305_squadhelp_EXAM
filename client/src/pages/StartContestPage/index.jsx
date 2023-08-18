@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateBundle } from '../../store/slices/bundleSlice';
-import BundleBox from '../../components/BundleBox/BundleBox';
-import CONSTANTS from '../../constants';
 import styles from './StartContestPage.module.sass';
+import BundleBox from '../../components/BundleBox/BundleBox';
 import Footer from '../../components/Footer/Footer';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
-import Header from '../../components/Header/Header';
+import Header from '../../components/Header';
+import { updateBundle } from '../../store/slices/bundleSlice';
+import CONSTANTS from '../../constants';
 
 const StartContestPage = props => {
   if (props.userStore.data.role !== CONSTANTS.CUSTOMER) {
     props.history.replace('/');
   }
-
-  const setBundle = bundleStr => {
+  
+const setBundle = bundleStr => {
     const array = bundleStr.toLowerCase().split('+');
     const bundleList = {};
     bundleList.first = array[0];

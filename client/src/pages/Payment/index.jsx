@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import isEmpty from 'lodash/isEmpty';
-import { pay, clearPaymentStore } from '../../store/slices/paymentSlice';
-import PayForm from '../../components/PayForm/PayForm';
 import styles from './Payment.module.sass';
-import CONSTANTS from '../../constants';
+import PayForm from '../../components/PayForm/PayForm';
 import Error from '../../components/Error/Error';
+import { pay, clearPaymentStore } from '../../store/slices/paymentSlice';
+import CONSTANTS from '../../constants';
 
 const Payment = (props) => {
   const pay = (values) => {

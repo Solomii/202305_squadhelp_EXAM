@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Header from '../../components/Header/Header';
-import CONSTANTS from '../../constants';
-import SlideBar from '../../components/SlideBar/SlideBar';
-import Footer from '../../components/Footer/Footer';
 import styles from './Home.module.sass';
-import carouselConstants from '../../carouselConstants';
+import Header from '../../components/Header';
+import SlideBar from '../../components/SlideBar';
+import Footer from '../../components/Footer/Footer';
 import Spinner from '../../components/Spinner/Spinner';
+import carouselConstants from '../../carouselConstants';
+import CONSTANTS from '../../constants';
 
 const Home = props => {
   const [index, setIndex] = useState(0);
   const [styleName, setStyle] = useState(styles.headline__static);
-  // let timeout;
 
   useEffect(() => {
-   const timeout = setInterval(() => {
+  let timeout = setInterval(() => {
       setIndex(index + 1);
       setStyle(styles.headline__isloading);
     }, 3000);

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import styles from './RegistrationPage.module.sass';
 import Logo from '../../components/Logo';
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
-import styles from './RegistrationPage.module.sass';
 import { clearAuthError } from '../../store/slices/authSlice';
 import CONSTANTS from '../../constants';
 

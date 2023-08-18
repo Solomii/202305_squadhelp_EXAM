@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { getUser } from '../../store/slices/userSlice';
 import Spinner from '../Spinner/Spinner';
 
-const OnlyNotAuthorizedUserHoc = Component => {
-  class HocForLoginSignUp extends React.Component {
+const WithNotAuth = Component => {
+  class WithSignUp extends React.Component {
     componentDidMount () {
       this.props.checkAuth(this.props.history.replace);
     }
@@ -26,7 +26,7 @@ const OnlyNotAuthorizedUserHoc = Component => {
     checkAuth: replace => dispatch(getUser(replace)),
   });
 
-  return connect(mapStateToProps, mapDispatchToProps)(HocForLoginSignUp);
+  return connect(mapStateToProps, mapDispatchToProps)(WithSignUp);
 };
 
-export default OnlyNotAuthorizedUserHoc;
+export default WithNotAuth;
