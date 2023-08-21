@@ -2,7 +2,10 @@ const env = process.env.NODE_ENV || 'development';
 const serverIP = 'localhost';
 const serverPort = 3000;
 
-const CAROUSEL_CONSTANTS = {
+const CONSTANTS = {
+  CONTACTS: {
+    PHONE: '(877) 355-3585',
+  },
   CUSTOMER: 'customer',
   CREATOR: 'creator',
   CONTEST_STATUS_ACTIVE: 'active',
@@ -84,4 +87,4 @@ const CAROUSEL_CONSTANTS = {
   ],
 };
 
-export default CAROUSEL_CONSTANTS;
+export default CONSTANTS;
