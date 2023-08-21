@@ -38,28 +38,28 @@ router.post(
   userController.payment,
 );
 
-router.post(
-  '/getCustomersContests',
+router.get(
+  '/customers-contests', //// changes !!!! Workhere
   checkToken.checkToken,
   contestController.getCustomersContests,
 );
 
 router.get(
-  '/getContestById',
+  '/contest-by-id', ////  //// changes !!!! Workhere
   checkToken.checkToken,
   basicMiddlewares.canGetContest,
   contestController.getContestById,
 );
 
 router.post(
-  '/getAllContests',
+  '/getAllContests', // Work here !!!!
   checkToken.checkToken,
   basicMiddlewares.onlyForCreative,
   contestController.getContests,
 );
 
-router.post(
-  '/getUser',
+router.get(
+  '/user',
   checkToken.checkAuth,
 );
 

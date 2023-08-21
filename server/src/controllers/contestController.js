@@ -241,7 +241,7 @@ module.exports.getCustomersContests = (req, res, next) => {
     .catch(err => next(new ServerError(err)));
 };
 
-module.exports.getContests = (req, res, next) => {
+module.exports.getContests = (req, res, next) => {  // Work here !!!!
   const predicates = UtilFunctions.createWhereForAllContests(req.body.typeIndex,
     req.body.contestId, req.body.industry, req.body.awardSort);
   db.Contests.findAll({
