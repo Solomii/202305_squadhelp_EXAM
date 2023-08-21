@@ -45,7 +45,7 @@ export const getActiveContests = ({
   awardSort,
   ownEntries,
 }) =>
-  httpClient.post('getAllContests', {
+  httpClient.post('contests', {
     offset,
     limit,
     typeIndex,

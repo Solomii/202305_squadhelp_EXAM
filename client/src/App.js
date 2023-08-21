@@ -48,12 +48,12 @@ class App extends Component {
           <Route exact path='/payment' component={WithAuth(Payment)} />
           <Route
             exact
-            path='/startContest'
+            path='/start-contest'
             component={WithAuth(StartContestPage)}
           />
           <Route
             exact
-            path='/startContest/nameContest'
+            path='/start-contest/name-contest'
             component={WithAuth(ContestCreationPage, {
               contestType: CONSTANTS.NAME_CONTEST,
               title: 'Company Name',
@@ -61,7 +61,7 @@ class App extends Component {
           />
           <Route
             exact
-            path='/startContest/taglineContest'
+            path='/start-contest/tag-line-contest'
             component={WithAuth(ContestCreationPage, {
               contestType: CONSTANTS.TAGLINE_CONTEST,
               title: 'TAGLINE',
@@ -69,7 +69,7 @@ class App extends Component {
           />
           <Route
             exact
-            path='/startContest/logoContest'
+            path='/start-contest/logo-contest'
             component={WithAuth(ContestCreationPage, {
               contestType: CONSTANTS.LOGO_CONTEST,
               title: 'LOGO',

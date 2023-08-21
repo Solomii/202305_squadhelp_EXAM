@@ -21,7 +21,7 @@ const setBundle = bundleStr => {
       bundleList[array[i]] = i === array.length - 1 ? 'payment' : array[i + 1];
     }
     props.choseBundle(bundleList);
-    props.history.push(`/startContest/${bundleList.first}Contest`);
+    props.history.push(`/start-contest/${bundleList.first}Contest`);
   };
 
   return (

@@ -39,20 +39,20 @@ router.post(
 );
 
 router.get(
-  '/customers-contests', //// changes !!!! Workhere
+  '/customers-contests', //// changes !!!! Work here
   checkToken.checkToken,
   contestController.getCustomersContests,
 );
 
 router.get(
-  '/contest-by-id', ////  //// changes !!!! Workhere
+  '/contest-by-id', ////  //// changes !!!! Work here
   checkToken.checkToken,
   basicMiddlewares.canGetContest,
   contestController.getContestById,
 );
 
 router.post(
-  '/getAllContests', // Work here !!!!
+  '/contests', // Work here !!!!
   checkToken.checkToken,
   basicMiddlewares.onlyForCreative,
   contestController.getContests,
