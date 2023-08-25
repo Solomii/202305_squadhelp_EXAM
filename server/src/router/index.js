@@ -23,7 +23,7 @@ router.post(
 );
 
 router.post(
-  '/dataForContest',
+  '/data-for-contest', 
   checkToken.checkToken,
   contestController.dataForContest,
 );
@@ -38,21 +38,21 @@ router.post(
   userController.payment,
 );
 
-router.get(
-  '/customers-contests', //// changes !!!! Work here
+router.post(
+  '/customers-contests',
   checkToken.checkToken,
   contestController.getCustomersContests,
 );
 
 router.get(
-  '/contest-by-id', ////  //// changes !!!! Work here
+  '/contest-by-id',
   checkToken.checkToken,
   basicMiddlewares.canGetContest,
   contestController.getContestById,
 );
 
 router.post(
-  '/contests', // Work here !!!!
+  '/contests',
   checkToken.checkToken,
   basicMiddlewares.onlyForCreative,
   contestController.getContests,
@@ -64,20 +64,20 @@ router.get(
 );
 
 router.get(
-  '/downloadFile/:fileName',
+  '/download-file/:fileName',
   checkToken.checkToken,
   contestController.downloadFile,
 );
 
 router.post(
-  '/updateContest',
+  '/update-contest',
   checkToken.checkToken,
   upload.updateContestFile,
   contestController.updateContest,
 );
 
 router.post(
-  '/setNewOffer',
+  '/set-new-offer',
   checkToken.checkToken,
   upload.uploadLogoFiles,
   basicMiddlewares.canSendOffer,
@@ -85,21 +85,21 @@ router.post(
 );
 
 router.post(
-  '/setOfferStatus',
+  '/set-offer-status',
   checkToken.checkToken,
   basicMiddlewares.onlyForCustomerWhoCreateContest,
   contestController.setOfferStatus,
 );
 
 router.post(
-  '/changeMark',
+  '/change-mark', 
   checkToken.checkToken,
   basicMiddlewares.onlyForCustomer,
   userController.changeMark,
 );
 
 router.post(
-  '/updateUser',
+  '/update-user',
   checkToken.checkToken,
   upload.uploadAvatar,
   userController.updateUser,
@@ -113,25 +113,25 @@ router.post(
 );
 
 router.post(
-  '/newMessage',
+  '/new-message',
   checkToken.checkToken,
   chatController.addMessage,
 );
 
-router.post(
-  '/getChat',
+router.get(
+  '/chat',
   checkToken.checkToken,
   chatController.getChat,
 );
 
-router.post(
-  '/getPreview',
+router.get(
+  '/preview',
   checkToken.checkToken,
   chatController.getPreview,
 );
 
 router.post(
-  '/blackList',
+  '/black-list',
   checkToken.checkToken,
   chatController.blackList,
 );
@@ -143,37 +143,37 @@ router.post(
 );
 
 router.post(
-  '/createCatalog',
+  '/create-catalog',
   checkToken.checkToken,
   chatController.createCatalog,
 );
 
-router.post(
-  '/updateNameCatalog',
+router.put(
+  '/update-name-catalog',
   checkToken.checkToken,
   chatController.updateNameCatalog,
 );
 
 router.post(
-  '/addNewChatToCatalog',
+  '/add-new-chat-to-catalog',
   checkToken.checkToken,
   chatController.addNewChatToCatalog,
 );
 
 router.post(
-  '/removeChatFromCatalog',
+  '/remove-chat-from-catalog',
   checkToken.checkToken,
   chatController.removeChatFromCatalog,
 );
 
 router.post(
-  '/deleteCatalog',
+  '/delete-catalog',
   checkToken.checkToken,
   chatController.deleteCatalog,
 );
 
-router.post(
-  '/getCatalogs',
+router.get(
+  '/catalogs',
   checkToken.checkToken,
   chatController.getCatalogs,
 );

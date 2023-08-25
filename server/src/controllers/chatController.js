@@ -249,7 +249,7 @@ module.exports.addNewChatToCatalog = async (req, res, next) => {
 };
 
 module.exports.removeChatFromCatalog = async (req, res, next) => {
-  try {
+  try { //// work here!!!!
     const catalog = await Catalog.findOneAndUpdate({
       _id: req.body.catalogId,
       userId: req.tokenData.userId,
