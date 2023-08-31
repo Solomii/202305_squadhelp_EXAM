@@ -59,7 +59,7 @@ class CreatorDashboard extends React.Component {
   renderIndustryType = () => {
     const array = [];
     const { creatorFilter } = this.props;
-    const { industry } = this.props.dataForContest.data;
+    const {data: {industry}} = this.props.dataForContest;
     array.push(
       <option key={0} value={null}>
         Choose industry

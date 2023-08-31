@@ -3,16 +3,12 @@ import classNames from 'classnames';
 import { useField } from 'formik';
 import CONSTANTS from '../../../constants';
 
-
-/// !!!!!! WORK HERE !!!!!!!
 const ImageUpload = props => {
   const [field] = useField(props.name);
-  const { uploadContainer, inputContainer, imgStyle } = props.classes;
+  const {classes: {uploadContainer, inputContainer, imgStyle} } = props;
   const onChange = e => {
     const node = window.document.getElementById('image-preview');
-    console.log(node)
     const file = e.target.files[0];
-    console.log(file)
     const imageType = /image.*/;
     if (!file.type.match(imageType)) {
       e.target.value = '';
@@ -42,11 +38,11 @@ const ImageUpload = props => {
       <img
         id='image-preview'
         src={
-          field
+          field.name
             ? CONSTANTS.ANONYM_IMAGE_PATH
-            : `${CONSTANTS.publicURL}${field}`
+            : `${CONSTANTS.publicURL}${field.name}`
         }
-        className={classNames({ [imgStyle]: !!field.value })}
+        className={classNames({ [imgStyle]: !!field.name })}
         alt='user'
       />
     </div>
