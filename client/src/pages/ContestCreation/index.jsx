@@ -29,8 +29,8 @@ const ContestCreationPage = (props) => {
       formRef.current.handleSubmit();
     }
   };
-
-  !props.bundleStore.bundle && props.history.replace('/start-contest');
+  
+  // !props.bundleStore.bundle && props.history.replace('/startContest');
 
   return (
     <div>

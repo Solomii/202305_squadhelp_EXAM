@@ -23,7 +23,7 @@ export const addChatToCatalog = data => httpClient.post('add-new-chat-to-catalog
 export const createCatalog = data => httpClient.post('create-catalog', data);
 export const deleteCatalog = data => httpClient.post('delete-catalog', data);
 export const removeChatFromCatalog = data =>
-  httpClient.post('remove-chat-from-catalog', data); //// work here!!!!
+  httpClient.post('remove-chat-from-catalog', data);
 export const changeCatalogName = data => httpClient.put('update-name-catalog', data);
 export const getCustomersContests = data =>
   httpClient.post(

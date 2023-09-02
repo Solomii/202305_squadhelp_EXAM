@@ -46,7 +46,7 @@ module.exports.onlyForCreative = (req, res, next) => {
   if (req.tokenData.role === CONSTANTS.CUSTOMER) {
     next(new RightsError());
   } else {
-    next();
+    return next();
   }
 
 };
@@ -55,7 +55,7 @@ module.exports.onlyForCustomer = (req, res, next) => {
   if (req.tokenData.role === CONSTANTS.CREATOR) {
     return next(new RightsError('this page only for customers'));
   } else {
-    next();
+    return next();
   }
 };
 
@@ -102,7 +102,7 @@ module.exports.onlyForCustomerWhoCreateContest = async (req, res, next) => {
 
 module.exports.canUpdateContest = async (req, res, next) => {
   try {
-    const result = bd.Contests.findOne({
+    const result = await bd.Contests.findOne({
       where: {
         userId: req.tokenData.userId,
         id: req.body.contestId,

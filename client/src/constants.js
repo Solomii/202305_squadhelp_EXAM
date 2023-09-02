@@ -3,7 +3,7 @@ const serverIP = 'localhost';
 const serverPort = 3000;
 
 const CONSTANTS = {
-  CONTACTS: {
+  CONTACTS_INFO: {
     PHONE: '(877) 355-3585',
   },
   CUSTOMER: 'customer',

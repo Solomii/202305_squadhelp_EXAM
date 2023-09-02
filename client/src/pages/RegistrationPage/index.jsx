@@ -108,7 +108,7 @@ const RegistrationPage = props => {
             <div className={styles.article}>
               Check out our <span className={styles.orangeSpan}>FAQs</span> or
               send us a<span className={styles.orangeSpan}>message</span>. For
-              assistance with launching a contest, you can also call us at {CONSTANTS.CONTACTS.PHONE} or schedule a&nbsp;
+              assistance with launching a contest, you can also call us at {CONSTANTS.CONTACTS_INFO.PHONE} or schedule a&nbsp;
               <span className={styles.orangeSpan}>Branding Consultation</span>
             </div>
           </div>

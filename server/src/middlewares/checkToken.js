@@ -32,8 +32,8 @@ module.exports.checkToken = async (req, res, next) => {
     return next(new TokenError('need token'));
   }
   try {
-    req.tokenData = jwt.verify(accessToken, CONSTANTS.JWT_SECRET);
-    next();
+    req.tokenData = await jwt.verify(accessToken, CONSTANTS.JWT_SECRET);
+    return next();
   } catch (err) {
     next(new TokenError());
   }
