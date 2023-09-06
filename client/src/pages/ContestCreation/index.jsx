@@ -20,7 +20,7 @@ const ContestCreationPage = (props) => {
     const route =
       props.bundleStore.bundle[props.contestType] === 'payment'
         ? '/payment'
-        : `${props.bundleStore.bundle[props.contestType]}Contest`;
+        : `${props.bundleStore.bundle[props.contestType]}-contest`;
     props.history.push(route);
   };
 
@@ -30,7 +30,7 @@ const ContestCreationPage = (props) => {
     }
   };
   
-  // !props.bundleStore.bundle && props.history.replace('/startContest');
+  !props.bundleStore.bundle && props.history.replace('/start-contest');
 
   return (
     <div>
