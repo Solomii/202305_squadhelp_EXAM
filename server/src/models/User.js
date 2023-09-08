@@ -1,7 +1,42 @@
+'use strict';
+const bcrypt = require('bcrypt');
+const {
+  Model
+} = require('sequelize');
+const { SALT_ROUNDS, ROLES } = require('../constants');
 
+const hashPassword = async (user, options) => {
+  if (user.changed('password')) {
+    const { password } = user;
+    const passwordHashed = await bcrypt.hash(password, SALT_ROUNDS);
+    user.password = passwordHashed;
+  }
+};
 
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define('Users', {
+  class User extends Model {
+    static associate(models) {
+      User.hasMany(models.Offer, {
+        foreignKey: 'userId', 
+        targetKey: 'id'
+      })
+      User.hasMany(models.Contest, {
+        foreignKey: 'userId', 
+        targetKey: 'id'
+      })
+      User.hasMany(models.Rating, {
+        foreignKey: 'userId', 
+        targetKey: 'id'
+
+      })
+    }
+    async comparePassword(password){
+      return bcrypt.compare(password, this.getDataValue('password'))
+    }
+    
+  }
+  
+  User.init({
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -21,6 +56,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     password: {
+      field: 'passwordHash',
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -31,11 +67,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     avatar: {
       type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: 'anon.png',
     },
     role: {
-      type: DataTypes.ENUM('customer', 'creator'),
+      type: DataTypes.ENUM(...Object.values(ROLES)),
       allowNull: false,
     },
     balance: {
@@ -55,28 +89,14 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: 0,
     },
-  },
-  {
-    timestamps: false,
+  }, {
+    sequelize,
+    modelName: 'User',
+    timestamps: true,
   });
 
-  User.associate = function (models) {
-    User.hasMany(models.Order, { foreignKey: 'user_id', targetKey: 'id' });
-  };
-
-  User.associate = function (models) {
-    User.hasMany(models.Participant,
-      { foreignKey: 'user_id', targetKey: 'id' });
-  };
-
-  User.associate = function (models) {
-    User.hasMany(models.Offer, { foreignKey: 'user_id', targetKey: 'id' });
-  };
-
-  User.associate = function (models) {
-    User.hasMany(models.RefreshToken,
-      { foreignKey: 'user_id', targetKey: 'id' });
-  };
+  User.beforeCreate(hashPassword);
+  User.beforeUpdate(hashPassword)
 
   return User;
 };

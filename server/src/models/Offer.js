@@ -1,13 +1,27 @@
+'use strict';
+const { OFFER_STATUSES } = require('../constants');
 
-
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  const Offer = sequelize.define('Offers', {
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-    },
+  class Offer extends Model {
+    static associate(models) {
+      Offer.belongsTo(models.User, {
+        foreignKey: 'userId', 
+        sourceKey: 'id'
+      });
+      Offer.belongsTo(models.Contest, {
+        foreignKey: 'contestId', 
+        sourceKey: 'id' 
+      });
+      Offer.hasOne(models.Rating, {
+        foreignKey: 'offerId', 
+        targetKey: 'id'
+      })
+    }
+  }
+  Offer.init({
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -19,34 +33,21 @@ module.exports = (sequelize, DataTypes) => {
     },
     text: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
     fileName: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
     originalFileName: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
     status: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      defaultValue: 'pending',
+      type: DataTypes.ENUM(...Object.values(OFFER_STATUSES)),
+      defaultValue: OFFER_STATUSES.PENDING,
     },
-  },
-  {
-    timestamps: false,
+  }, {
+    sequelize,
+    modelName: 'Offer',
+    timestamps: true,
   });
-
-  Offer.associate = function (models) {
-    Offer.belongsTo(models.User, { foreignKey: 'user_id', sourceKey: 'id' });
-  };
-
-  Offer.associate = function (models) {
-    Offer.belongsTo(models.Contest,
-      { foreignKey: 'contest_id', sourceKey: 'id' });
-  };
-
   return Offer;
 };
