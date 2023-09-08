@@ -66,7 +66,7 @@ const ContestSideBar = props => {
             <div className={styles.customerInfo}>
               <img
                 src={
-                  User.avatar === 'anon.png'
+                  User.avatar === null
                     ? CONSTANTS.ANONYM_IMAGE_PATH
                     : `${CONSTANTS.publicURL}${User.avatar}`
                 }
