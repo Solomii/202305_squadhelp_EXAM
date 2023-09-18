@@ -33,7 +33,7 @@ module.exports.dataForContest = async (req, res, next) => {
       }
       response[characteristic.type].push(characteristic.describe);
     });
-    res.send(response);
+    return res.send(response);
   } catch (err) {
     console.log(err);
     next(new ServerError('cannot get contest preferences'));
@@ -57,7 +57,7 @@ module.exports.getContestById = async (req, res, next) => {
           model: db.Offer,
           required: false,
           where:
-            req.tokenData.role === CONSTANTS.ROLES.CREATOR
+            req.tokenData.role === CONSTANTS.CREATOR
               ? { userId: req.tokenData.userId }
               : {},
           attributes: { exclude: ['userId', 'contestId'] },
@@ -86,7 +86,7 @@ module.exports.getContestById = async (req, res, next) => {
       }
       delete offer.Rating;
     });
-    res.send(contestInfo);
+    return res.send(contestInfo);
   } catch (e) {
     next(new ServerError());
   }
@@ -109,7 +109,7 @@ module.exports.updateContest = async (req, res, next) => {
       id: contestId,
       userId: req.tokenData.userId,
     });
-    res.send(updatedContest);
+    return res.send(updatedContest);
   } catch (e) {
     next(e);
   }
@@ -117,7 +117,7 @@ module.exports.updateContest = async (req, res, next) => {
 
 module.exports.setNewOffer = async (req, res, next) => {
   const obj = {};
-  if (req.body.contestType === CONSTANTS.CONTEST_TYPES.LOGO_CONTEST) {
+  if (req.body.contestType === CONSTANTS.LOGO_CONTEST) {
     obj.fileName = req.file.filename;
     obj.originalFileName = req.file.originalname;
   } else {
@@ -133,7 +133,7 @@ module.exports.setNewOffer = async (req, res, next) => {
       .getNotificationController()
       .emitEntryCreated(req.body.customerId);
     const User = Object.assign({}, req.tokenData, { id: req.tokenData.userId });
-    res.send(Object.assign({}, result, { User }));
+    return res.send(Object.assign({}, result, { User }));
   } catch (e) {
     return next(new ServerError());
   }
@@ -141,7 +141,7 @@ module.exports.setNewOffer = async (req, res, next) => {
 
 const rejectOffer = async (offerId, creatorId, contestId) => {
   const rejectedOffer = await contestQueries.updateOffer(
-    { status: CONSTANTS.OFFER_STATUSES.REJECTED },
+    { status: CONSTANTS.OFFER_STATUS_REJECTED },
     { id: offerId }
   );
   controller
@@ -186,8 +186,8 @@ const resolveOffer = async (
   const updatedOffers = await contestQueries.updateOfferStatus(
     {
       status: db.sequelize.literal(` CASE
-            WHEN "id"=${offerId} THEN '${CONSTANTS.OFFER_STATUSES.WON}'
-            ELSE '${CONSTANTS.OFFER_STATUSES.REJECTED}'
+            WHEN "id"=${offerId} THEN '${CONSTANTS.OFFER_STATUS_WON}'
+            ELSE '${CONSTANTS.OFFER_STATUS_REJECTED}'
             END
     `),
     },
@@ -200,7 +200,7 @@ const resolveOffer = async (
   const arrayRoomsId = [];
   updatedOffers.forEach(offer => {
     if (
-      offer.status === CONSTANTS.OFFER_STATUSES.REJECTED &&
+      offer.status ===  CONSTANTS.OFFER_STATUS_REJECTED &&
       creatorId !== offer.userId
     ) {
       arrayRoomsId.push(offer.userId);
@@ -228,7 +228,7 @@ module.exports.setOfferStatus = async (req, res, next) => {
         req.body.creatorId,
         req.body.contestId
       );
-      res.send(offer);
+      return res.send(offer);
     } catch (err) {
       next(err);
     }
@@ -243,7 +243,7 @@ module.exports.setOfferStatus = async (req, res, next) => {
         req.body.priority,
         transaction
       );
-      res.send(winningOffer);
+      return res.send(winningOffer);
     } catch (err) {
       transaction.rollback();
       next(err);
@@ -251,7 +251,7 @@ module.exports.setOfferStatus = async (req, res, next) => {
   }
 };
 
-module.exports.getCustomersContests = (req, res, next) => {
+module.exports.getCustomersContests =  (req, res, next) => {
   db.Contest.findAll({
     where: { status: req.headers.status, userId: req.tokenData.userId },
     limit: req.body.limit,
@@ -272,14 +272,14 @@ module.exports.getCustomersContests = (req, res, next) => {
       let haveMore = true;
       if (contests.length === 0) {
         haveMore = false;
-      }
-      res.send({ contests, haveMore });
+      } 
+    return res.send({ contests, haveMore });
     })
     .catch(err => next(new ServerError(err)));
 };
 
-module.exports.getContests = (req, res, next) => {
-  const predicates = UtilFunctions.createWhereForAllContests(
+module.exports.getContests = async (req, res, next) => {
+  const predicates = await UtilFunctions.createWhereForAllContests(
     req.body.typeIndex,
     req.body.contestId,
     req.body.industry,
@@ -307,7 +307,7 @@ module.exports.getContests = (req, res, next) => {
       if (contests.length === 0) {
         haveMore = false;
       }
-      res.send({ contests, haveMore });
+      return res.send({ contests, haveMore });
     })
     .catch(err => {
       next(new ServerError());

@@ -1,5 +1,4 @@
 'use strict';
-const { CONTEST_TYPES } =  require ('../constants');
 
 const {
   Model
@@ -8,16 +7,22 @@ module.exports = (sequelize, DataTypes) => {
   class Contest extends Model {
     static associate(models) {
       Contest.belongsTo(models.User, {
-        oreignKey: 'userId', 
+        foreignKey: 'userId', 
         sourceKey: 'id'
       })
       Contest.hasMany(models.Offer, {
         foreignKey: 'contestId', 
-        targetKey: 'id'
+        targetKey: 'id',
       })
     }
   }
   Contest.init({
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
     orderId: {
       allowNull: false,
       type: DataTypes.STRING,
@@ -32,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     contestType: {
       allowNull: false,
-      type: DataTypes.ENUM(...Object.values(CONTEST_TYPES)),
+      type: DataTypes.ENUM('name', 'tagline', 'logo'),
     },
     fileName: {
       allowNull: true,
@@ -78,6 +83,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       type: DataTypes.STRING,
     },
+    createdAt: {
+      allowNull: true,
+      type: DataTypes.STRING,
+    },
     status: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -93,7 +102,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Contest',
-    timestamps: true
+    timestamps: false,
   });
   return Contest;
 };

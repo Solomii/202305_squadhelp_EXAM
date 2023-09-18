@@ -1,4 +1,3 @@
-const { CONTEST_TYPES } =  require ('../constants');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -11,7 +10,7 @@ module.exports = {
       },
       contestType: {
         allowNull: false,
-        type: Sequelize.ENUM(...Object.values(CONTEST_TYPES)),
+        type: Sequelize.ENUM('name', 'tagline', 'logo'),
       },
       fileName: {
         allowNull: true,
@@ -65,6 +64,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DECIMAL,
       },
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
+      },
       priority: {
         allowNull: false,
         type: Sequelize.INTEGER,
@@ -80,14 +84,6 @@ module.exports = {
           model: 'Users',
           key: 'id',
         },
-        createdAt: {
-          allowNull: false,
-          type: Sequelize.DATE
-        },
-        updatedAt: {
-          allowNull: false,
-          type: Sequelize.DATE
-        }
       },
     });
   },

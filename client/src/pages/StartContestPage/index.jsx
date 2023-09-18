@@ -9,7 +9,7 @@ import { updateBundle } from '../../store/slices/bundleSlice';
 import CONSTANTS from '../../constants';
 
 const StartContestPage = props => {
-  if (!props.userStore.data || (props.userStore.data.role !== CONSTANTS.CUSTOMER)) {  //// !!!!!!! change, WORK HERE
+  if (!props.userStore.data || (props.userStore.data.role !== CONSTANTS.CUSTOMER)) {  
     props.history.replace('/');
   }
   
@@ -21,7 +21,7 @@ const setBundle = bundleStr => {
       bundleList[array[i]] = i === array.length - 1 ? 'payment' : array[i + 1];
     }
     props.choseBundle(bundleList);
-    props.history.push(`/start-contest/${bundleList.first}-contest`); //// !!!!!!! change, WORK HERE
+    props.history.push(`/start-contest/${bundleList.first}-contest`);
   };
 
   return (

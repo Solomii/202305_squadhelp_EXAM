@@ -1,4 +1,3 @@
-const { ROLES } = require("../constants");
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -21,7 +20,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      passwordHash: {
+      password: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -34,7 +33,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       role: {
-        type: Sequelize.ENUM(...Object.values(ROLES)),
+        type: Sequelize.ENUM('customer', 'creator'),
         allowNull: false,
       },
       balance: {
@@ -51,14 +50,6 @@ module.exports = {
         allowNull: false,
         defaultValue: 0,
       },
-      createdAt: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      updatedAt: {
-        type: Sequelize.DATE,
-        allowNull: false
-      }
     })
       .then(() => queryInterface.addConstraint('Users',  {
         type: 'check',

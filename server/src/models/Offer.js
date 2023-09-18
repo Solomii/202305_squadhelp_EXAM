@@ -1,5 +1,4 @@
 'use strict';
-const { OFFER_STATUSES } = require('../constants');
 
 const {
   Model
@@ -22,10 +21,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Offer.init({
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-
     },
     contestId: {
       type: DataTypes.INTEGER,
@@ -33,21 +37,26 @@ module.exports = (sequelize, DataTypes) => {
     },
     text: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     fileName: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     originalFileName: {
       type: DataTypes.STRING,
+      allowNull: true,
+
     },
     status: {
-      type: DataTypes.ENUM(...Object.values(OFFER_STATUSES)),
-      defaultValue: OFFER_STATUSES.PENDING,
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: 'pending',
     },
   }, {
     sequelize,
     modelName: 'Offer',
-    timestamps: true,
+    timestamps: false
   });
   return Offer;
 };
