@@ -31,11 +31,10 @@ module.exports.dataForContest = async (req, res, next) => {
       if (!response[characteristic.type]) {
         response[characteristic.type] = [];
       }
-      response[characteristic.type].push(characteristic.describe);
+      return response[characteristic.type].push(characteristic.describe);
     });
     return res.send(response);
   } catch (err) {
-    console.log(err);
     next(new ServerError('cannot get contest preferences'));
   }
 };
@@ -86,7 +85,7 @@ module.exports.getContestById = async (req, res, next) => {
       }
       delete offer.Rating;
     });
-    return res.send(contestInfo);
+     return res.send(contestInfo);
   } catch (e) {
     next(new ServerError());
   }
@@ -273,7 +272,7 @@ module.exports.getCustomersContests =  (req, res, next) => {
       if (contests.length === 0) {
         haveMore = false;
       } 
-    return res.send({ contests, haveMore });
+     return res.send({ contests, haveMore });
     })
     .catch(err => next(new ServerError(err)));
 };

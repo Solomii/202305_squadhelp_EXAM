@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styles from './StartContestPage.module.sass';
 import BundleBox from '../../components/BundleBox';
+import ButtonGroup from '../../components/ButtonGroup';
 import Footer from '../../components/Footer';
 import ProgressBar from '../../components/ProgressBar';
 import Header from '../../components/Header';
@@ -9,11 +10,14 @@ import { updateBundle } from '../../store/slices/bundleSlice';
 import CONSTANTS from '../../constants';
 
 const StartContestPage = props => {
-  if (!props.userStore.data || (props.userStore.data.role !== CONSTANTS.CUSTOMER)) {  
+  if (
+    !props.userStore.data ||
+    props.userStore.data.role !== CONSTANTS.CUSTOMER
+  ) {
     props.history.replace('/');
   }
-  
-const setBundle = bundleStr => {
+
+  const setBundle = bundleStr => {
     const array = bundleStr.toLowerCase().split('+');
     const bundleList = {};
     bundleList.first = array[0];
@@ -108,7 +112,15 @@ const setBundle = bundleStr => {
             setBundle={setBundle}
           />
         </div>
+        <ButtonGroup
+          buttons={[
+            'The Domain should exactly match the name',
+            ' But variations are allowed(Recommended)',
+            'I am loking for a name, not a Dmain',
+          ]}
+        />
       </div>
+
       <Footer />
     </div>
   );
