@@ -113,14 +113,13 @@ const StartContestPage = props => {
           />
         </div>
         <ButtonGroup
-          buttons={[
-            'The Domain should exactly match the name',
-            ' But variations are allowed(Recommended)',
-            'I am loking for a name, not a Dmain',
-          ]}
-        />
+            buttons={[
+              'The Domain should exactly match the name',
+              ' But variations are allowed(Recommended)',
+              'I am loking for a name, not a Dmain',
+            ]}
+          />
       </div>
-
       <Footer />
     </div>
   );

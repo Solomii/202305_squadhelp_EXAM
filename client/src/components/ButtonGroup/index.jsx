@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './ButtonGroup.module.sass';
 import Button from './Button';
 
-const ButtonGroup = ({ buttons }) => {
+const ButtonGroup = ({ buttons}) => {
   return (
-    <div>
+    <div className={styles.testButtonGroup}>
       {buttons?.map((text, i) => (
         <button key={i} name={text} className={styles.customButton}>
-          <Button />
-          <br />
-          <br />
+          <Button className={styles.activeBtn} />
+          <br/>
           {text}
         </button>
       ))}

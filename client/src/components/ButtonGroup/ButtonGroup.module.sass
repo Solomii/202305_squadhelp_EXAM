@@ -1,16 +1,38 @@
-.customButton
-  margin: 20px
-  width: 350px
-  height: 150px
-  font-size: 20px
-  border: 1px solid gray
-  border-radius: 5px
-  color: gray
-  background-color: none
-  cursor: pointer
+.testButtonGroup
+  margin-top: 40px
+  display: flex
+  align-items: center
+  justify-content: center
+  box-sizing: border-box
+  flex-wrap: wrap
+  max-width: 80%
 
-  &:hover
-   border: 2px solid #28d2d1 
-   color: black
-     
+  .customButton
+    margin: 15px
+    padding: 0px 5px
+    width: 350px
+    height: 100px
+    text-align: center
+    font-family: 'Raleway', sans-serif
+    font-size: 16px
+    border: 1px solid #ccc
+    background: none
+    border-radius: 5px
+    color: #767979
+    cursor: pointer
+
+    &:hover
+     border: 2px solid #28d2d1 
+     color: #333
+
+.activeBtn
+    margin-bottom: 15px
+    padding: 6px 15px
+    font-size: 12px
+    background-color: #767979
+    color: white
+    border-radius: 43%
+    border: none
+    &:hover
+      background-color: #28d2d1   
  
