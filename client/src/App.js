@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import ContestPage from './pages/ContestPage';
 import UserProfile from './pages/UserProfile';
 import ContestCreationPage from './pages/ContestCreation';
+import HowItWorks from './pages/HowItWorksPage';
 import NotFound from './components/NotFound';
 import ChatContainer from './components/Chat/ChatComponents/ChatContainer';
 import { WithAuth, WithNotAuth } from './components/HOCs';
@@ -82,6 +83,7 @@ class App extends Component {
             component={WithAuth(ContestPage)}
           />
           <Route exact path='/account' component={WithAuth(UserProfile)} />
+          <Route exact path='/how-it-works' component={HowItWorks} />
           <Route component={NotFound} />
         </Switch>
         <ChatContainer />
