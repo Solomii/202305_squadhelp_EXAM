@@ -85,6 +85,64 @@ const CONSTANTS = {
       items: ['Terms of Service', 'Privacy Policy', 'Cookie Policy'],
     },
   ],
+  FooterItemsHowItWorks: [
+    {
+      title: 'Services',
+      items: [
+        'Premium Domains For Sale',
+        'Crowdsource Naming',
+        'Naming Agency',
+        'Brandable Domains',
+        'Short Domains',
+        'One Word Domains',
+        'Industry Domains',
+        'Agency Services',
+        'Logo Contests',
+        'Tagline Contests',
+        'Trademark Filing Service',
+        'Audience Test',
+      ],
+    },
+    {
+      title: 'Tools',
+      items: [
+        'Business Name Generator',
+        'How to Name Your Business',
+        'Free Trademark Checker',
+        'Branding Blog',
+        'Business Naming eBook',
+        'Startup Toolkit',
+      ],
+    },
+    {
+      title: 'SquadHelp',
+      items: [
+        'About',
+        'Contact',
+        'How It Works',
+        'Testimonials',
+        'Our Work',
+        'Help & FAQs',
+      ],
+    },
+    {
+      title: 'Creatives',
+      items: [
+        'Get Started',
+        'Help & FAQs',
+        'Domain Selling Info',
+        'Discussion Forum',
+      ],
+    },
+    {
+      title: 'Legal',
+      items: [
+        'Terms of Service',
+        'Privacy Policy',
+        'Cookie Policy',
+      ],
+    },
+  ],
 };
 
 export default CONSTANTS;
