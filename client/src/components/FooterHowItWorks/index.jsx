@@ -25,7 +25,7 @@ class Footer extends Component {
       <div className={styles.footerContainer}>
         <div className={styles.footerTop}>
           <div className={styles.footerTopLinks}>{this.topFooterRender()}</div>
-          <div>
+          <div className={styles.footerMainSearch}>
             <div>
               <h2>Trending Searches</h2>
               <p>
@@ -37,25 +37,45 @@ class Footer extends Component {
                 <input type='text' placeholder='Search over 75,000 Names' />
               </form>
             </div>
-            <div>
-              <button>Short Names</button>
-              <button>Short Names</button>
-              <button>Short Names</button>
-              <button>Short Names</button>
+            <div className={styles.footerMainSearchBtn}>
+              <div>
+                <a href='https://google.com'>Short Names</a>
+              </div>
+              <div>
+                <a href='https://google.com'>One Word</a>
+              </div>
+              <div>
+                <a href='https://google.com'>4-letter</a>
+              </div>
+              <div>
+                <a href='https://google.com'>5-letter</a>
+              </div>
             </div>
           </div>
-          <div>
-            <p>Copyright © 2023 Squadhelp Inc</p>
-            <a>
-              Squadhelp.com has a Shopper Approved rating of 4.9/5 based on 2782
-              ratings and reviews
-            </a>
-            <ul>
-              <li><a href=""><img src="" alt="in" /></a></li>
-              <li><a href=""><img src="" alt="in" /></a></li>
-              <li><a href=""><img src="" alt="twitter" /></a></li>
-              <li><a href=""><img src="" alt="facebook" /></a></li>
-            </ul>
+          <div className={styles.footerBottom}>
+            <div>
+              <p>Copyright © 2023 Squadhelp Inc</p>
+            </div>
+            <div>
+              <a href='https://google.com'>
+                Squadhelp.com has a Shopper Approved rating of 4.9/5 based on
+                2782 ratings and reviews
+              </a>
+            </div>
+            <div>
+              <a href=''>
+                <img src='' alt='in' />
+              </a>
+              <a href=''>
+                <img src='' alt='in' />
+              </a>
+              <a href=''>
+                <img src='' alt='twitter' />
+              </a>
+              <a href=''>
+                <img src='' alt='facebook' />
+              </a>
+            </div>
           </div>
         </div>
       </div>

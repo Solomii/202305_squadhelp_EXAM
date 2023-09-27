@@ -1,7 +1,7 @@
 .footerContainer
   width: 100%
   background-color: #ebebeb 
-  padding-bottom: 50px
+  padding: 50px 10px
 
   h2
    font-size: 20px
@@ -18,17 +18,22 @@
    margin-bottom: 16px
 
   .footerTop
+    margin: 0 auto
     width: 100% 
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
     padding: 20px 0
     font-family: 'Raleway', sans-serif
 
-    div
-      margin: 0 auto
+    .footerTopLinks
       display: flex
       flex-wrap: wrap
-      justify-content: row
+      justify-content: center
       align-items: baseline
       justify-content: space-between
+      padding: 30px 0
       @media (min-width: 768px)
         width: 750px
 
@@ -40,10 +45,9 @@
 
       div
         display: flex
-        min-width: 250px
-        max-width: 300px
+        min-width: 200px
+        max-width: 250px
         flex-direction: column
-        padding: 15px
 
         a
           padding-bottom: 7px
@@ -55,5 +59,93 @@
         a:hover
           color: #377dff
 
+    .footerMainSearch
+      display: flex
+      align-items:center
+      justify-content: space-between
+      padding: 50px 0
+      border-top: 1px solid #f8f8f8
+      border-bottom: 1px solid #f8f8f8
+      @media (min-width: 768px)
+        width: 750px
+
+      @media (min-width: 992px)
+        width: 970px
+
+      @media (min-width: 1200px)
+        width: 1170px
+
+      div
+       display: flex
+       align-items:center
+       justify-content: space-between
+       min-width: 250px
+       max-width: 500px
+       flex-direction: column
+
+       input
+        margin-top: 30px
+        width:80%
+        padding: 15px 10px
+        border: none
+
+      .footerMainSearchBtn
+       display: flex
+       flex-direction: row
+       flex-wrap: wrap
+       
+       a
+        margin: 5px
+        padding: 15px 5px
+        width: 100px
+        background-color: #fbfcfe
+        color: #4a4a4a
+        border-radius: 8px
+        text-align: center
+        font-size: 14px
+        font-weight: 600
+        text-decoration: none
+
+    .footerBottom
+      display: flex
+      flex-wrap: wrap
+      align-items:center
+      justify-content: space-between
+      padding-top: 40px 
+     
+      @media (min-width: 768px)
+        width: 750px
+
+      @media (min-width: 992px)
+        width: 970px
+        flex-direction:  row
+
+      @media (min-width: 1200px)
+        width: 1170px
+
+      div
+        display: flex
+        text-align: center
+        align-items: center
+        justify-content: space-between
+        min-width: 250px
+        max-width: 400px
+        padding: 20px 30px
+        
+        p
+         font-size: 16px
+         font-weight: 600
+         color: #4a4a4a
+        
+
+        a
+         padding-bottom: 7px
+         font-size: 14px
+         line-height: 24px
+         font-weight: 600
+         text-decoration: none
+         color: #4a4a4a
       
-   
+
+        a:hover
+          color: #377dff
