@@ -6,7 +6,7 @@ import FooterHowItWorks from '../../components/FooterHowItWorks'
 const HowItWorks = () => {
   return (
     <div>
-      <HeaderHowItWorks />
+      {/* <HeaderHowItWorks /> */}
       <FooterHowItWorks />
     </div>
   );

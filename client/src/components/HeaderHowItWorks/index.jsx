@@ -18,7 +18,7 @@ class HeaderHowItWorks extends React.Component {
         <div className={styles.navContainerTest}>
           <Logo className={styles.logo} alt='blue_logo' />
           <form>
-            <input type='text' placeholder='Search over 1000,000 names' />
+            <input type='text' placeholder='Search over 1000,000 names              &#x1F50D;'/>
           </form>
           <div className={styles.leftNav}>
             <nav className={styles.nav}>
