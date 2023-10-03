@@ -200,6 +200,15 @@ const CONSTANTS = {
     },
   ],
 
+  LIST_NUMBER: 1,
+
+  LIST_NAMING_CONTESTS_WORK: [
+    'Fill out your Naming Brief and begin receiving name ideas in minutes',
+    'Rate the submissions and provide feedback to creatives. Creatives submit even more names based on your feedback.',
+    'Our team helps you test your favorite names with your target audience. We also assist with Trademark screening.',
+    'Pick a Winner. The winner gets paid for their submission.',
+  ],
+
   SEARCHES_IMG_FOR_BUTTON: (
     <svg
       class='w-4 h-5 sh-footer--power-icon'
