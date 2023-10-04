@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './GenuineHowItWorks.module.sass';
-import SvgComponentCup from '../icons/SvgComponentCup';
-import SvgPersonWithLaptop from '../icons/SvgPersonWithLaptop';
+import SvgComponentCup from '../icons/SvgComponentCup.jsx';
+import SvgPersonWithLaptop from '../icons/SvgPersonWithLaptop.jsx';
 import CONSTANTS from '../../constants';
 
 const GenuineNaminingContestsWork = () => {

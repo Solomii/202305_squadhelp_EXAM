@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './GenuineHowItWorks.module.sass';
-import GenuineWaysToUse from './GenuineWaysToUse.jsx';
+import GenuineWaysToUse from './GenuineWaysToUse';
 import GenuineNamingContestsWork from './GenuineNaminingContestsWork';
+import GenuineQeustionsBox from './GenuineQeustionsBox';
 
 const GenuineHowItWorks = () => {
   return (
@@ -34,9 +35,9 @@ const GenuineHowItWorks = () => {
           </p>
           <GenuineWaysToUse />
         </div>
-         
       </div>
-      <GenuineNamingContestsWork/>
+      <GenuineNamingContestsWork />
+      <GenuineQeustionsBox />
 
       {/* the end genuine page */}
     </div>
