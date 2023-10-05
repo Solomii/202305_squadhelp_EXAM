@@ -10,7 +10,7 @@ const SvgPersonWithLaptop = props => (
       enableBackground: 'new 0 0 925.4 1059.7',
     }}
     viewBox='0 0 925.4 1059.7'
-    width='400px'
+    width='100%'
     {...props}
   >
     <style>
