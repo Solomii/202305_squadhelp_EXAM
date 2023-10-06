@@ -4,6 +4,7 @@ import SvgStarts from '../icons/SvgStarts';
 import SvgSharingFiles from '../icons/SvgSharingFiles';
 import GenuineQeustionsBox from './GenuineQeustionsBox';
 
+
 const GenuineStartContest = () => {
   return (
     <div className={styles.startContest}>

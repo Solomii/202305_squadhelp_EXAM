@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import styles from './GenuineHowItWorks.module.sass';
 import CONSTANTS from '../../constants';
+import SvgForbes from '../icons/SvgForbes';
+import SvgTNW from '../icons/SvgTnw';
+import SvgChicagoTribune from '../icons/SvgChicagoTribune';
+import SvgMashble from '../icons/SvgMashable';
 
 class GenuineQeustionsBox extends Component {
   renderLists = CONSTANTS.QUESTIONS_LIST.map(item => {
@@ -22,7 +26,7 @@ class GenuineQeustionsBox extends Component {
     return (
       <div className={styles.questionsBoxWhite}>
         <ul>
-          {this.renderLists}
+          <div>{this.renderLists}</div>
           <div className={styles.questionsBoxBlue}>
             <h4>Questions?</h4>
             <p>
@@ -40,6 +44,33 @@ class GenuineQeustionsBox extends Component {
             <p>Call us for assistance</p>
           </div>
         </ul>
+        <div className={styles.brands}>
+          <div className={styles.featuredIn}>
+            <h6>Featured In</h6>
+          </div>
+          <div className={styles.brandNames}>
+            <div>
+              <a href=''>
+                <SvgForbes />
+              </a>
+            </div>
+            <div>
+              <a href=''>
+                <SvgTNW />
+              </a>
+            </div>
+            <div>
+              <a href=''>
+                <SvgChicagoTribune />
+              </a>
+            </div>
+            <div>
+              <a href=''>
+                <SvgMashble />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
