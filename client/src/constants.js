@@ -145,6 +145,7 @@ const CONSTANTS = {
       fillerButton: 'Learn More',
     },
   ],
+
   FOOTER_HOW_IT_WORKS: [
     {
       title: 'Services',

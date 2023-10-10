@@ -3,6 +3,7 @@ import styles from './GenuineHowItWorks.module.sass';
 import GenuineWaysToUse from './GenuineWaysToUse';
 import GenuineNamingContestsWork from './GenuineNaminingContestsWork';
 import GenuineStartContest from './GenuineStartContest';
+import GenuineLaunchingContest from './GenuineLaunchingContest';
 
 const GenuineHowItWorks = () => {
   return (
@@ -33,12 +34,13 @@ const GenuineHowItWorks = () => {
           <p>
             Squadhelp offers 3 ways to get you a perfect name for your business.
           </p>
-          <GenuineWaysToUse />
+          {/* <GenuineWaysToUse /> */}
         </div>
       </div>
       {/* <GenuineNamingContestsWork /> */}
+      <GenuineLaunchingContest/>
       <GenuineStartContest/>
-      
+   
 
       {/* the end genuine page */}
     </div>
