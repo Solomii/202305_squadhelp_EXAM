@@ -24,6 +24,7 @@ class GenuineLaunchingContest extends Component {
     return (
       <div>
         {/* <div>blue div Launching A constest</div> */}
+        {/* <div>blue div Launching A constest</div> */}
         <div>
           {/* <div>
           <h3>Launching A Contest</h3>

@@ -20,8 +20,8 @@ export const questionsAnswersData = [
   {
     id: 3,
     question: 'What if I do not like any submissions?',
-    showText: 
-        'While it is unusually rare that you will not like any names provided, we have a few options in case this problem occurs:If the contest ends and you have not yet found a name that you’d like to move forward with, we can provide complimentary extension of your contest as well as a complimentary consultation with one of our branding consultants (a $99 value). By exploring our premium domain marketplace you can apply the contest award towards the purchase of any name listed for sale. If you choose the Gold package or Platinum package and keep the contest as "Not Guaranteed", you can request a partial refund if you choose not to move forward with any name from you project. (Please note that the refund is for the contest award). Here is a link to our Refund Pokicy'
+    showText:
+      'While it is unusually rare that you will not like any names provided, we have a few options in case this problem occurs:If the contest ends and you have not yet found a name that you’d like to move forward with, we can provide complimentary extension of your contest as well as a complimentary consultation with one of our branding consultants (a $99 value). By exploring our premium domain marketplace you can apply the contest award towards the purchase of any name listed for sale. If you choose the Gold package or Platinum package and keep the contest as "Not Guaranteed", you can request a partial refund if you choose not to move forward with any name from you project. (Please note that the refund is for the contest award). Here is a link to our Refund Pokicy',
   },
   {
     id: 4,
@@ -76,6 +76,13 @@ export const questionsAswersBuingData = [
     showText:
       'We offer payment plans for many domains in our Marketplace. If you purchase a domain on a payment plan, we hold the domain in an Escrow account until it is fully paid off. However our team can assist you with making any changes to the domains (such as Nameserver changes), so that you can start using the domain right away after making your first installment payment.',
   },
+  {
+    id: 3,
+    question:
+      'If I purchase a Domain on installments, can I start using it to setup my website?',
+    showText:
+      'We offer payment plans for many domains in our Marketplace. If you purchase a domain on a payment plan, we hold the domain in an Escrow account until it is fully paid off. However our team can assist you with making any changes to the domains (such as Nameserver changes), so that you can start using the domain right away after making your first installment payment.',
+  },
 ];
 
 export const questionsAswersManagedData = [
@@ -88,7 +95,8 @@ export const questionsAswersManagedData = [
   {
     id: 1,
     question: " What's a typical timeline for a Managed Contest?",
-    showText: 'The overall process takes 12-13 days: 1)The Managed projects start with a project kick-off call with your Branding Consultant. You can schedule this call online immediately after making your payment.2)After your kick-off call, the Branding consultant will write your project brief and send for your approval within 1 business day. 3)Upon your approval, the contest will go live. The branding consultant will help manage your project throughout the brainstorming phase (typically 5 days).4)Upon the completion of brainstorming phase, the branding consultant will work with you to test the top 6 names from your Shortlist (3-5 Days). In addition, the branding consultant will coordinate the detailed Trademark screening (1-3 days)',
+    showText:
+      'The overall process takes 12-13 days: 1)The Managed projects start with a project kick-off call with your Branding Consultant. You can schedule this call online immediately after making your payment.2)After your kick-off call, the Branding consultant will write your project brief and send for your approval within 1 business day. 3)Upon your approval, the contest will go live. The branding consultant will help manage your project throughout the brainstorming phase (typically 5 days).4)Upon the completion of brainstorming phase, the branding consultant will work with you to test the top 6 names from your Shortlist (3-5 Days). In addition, the branding consultant will coordinate the detailed Trademark screening (1-3 days)',
   },
   {
     id: 2,
