@@ -1,13 +1,16 @@
 import React, { Component, useState } from 'react';
 import styles from './GenuineHowItWorks.module.sass';
-import { questionsAnswersData } from './questionAnswerData';
+import {
+  questionsAnswersData,
+  questionsAswersBuingData,
+  questionsAswersManagedData,
+  questionsAswersForCreativesData,
+} from './questionAnswerData';
 
 class GenuineLaunchingContest extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      testQueston: 0,
-      testAnswer: 0,
       isShow: false,
     };
   }
@@ -16,61 +19,96 @@ class GenuineLaunchingContest extends Component {
     this.setState({ isShow: !isShow });
   };
 
-  // listQuestion = questionsAnswersData.map((item, index) => {
-  //   return (
-  //     <span>
-  //       {item.question}
-  //       <i class='fas fa-arrow-down small'></i>
-  //     </span>
-  //   );
-  // });
-
-  // listShow = questionsAnswersData.map(item => {
-  //   return <p key={item.id}> {item.showText}</p>;
-  // });
-
   render () {
-    const { testQueston, testAnswer, isShow } = this.state;
+    const { isShow } = this.state;
     return (
       <div>
         {/* <div>blue div Launching A constest</div> */}
-        {/* <div>
+        <div>
+          {/* <div>
           <h3>Launching A Contest</h3>
           <div>
-            <div>
-              <button type='button' onClick={this.handleButtonSwitch}>
-                How long does it take to start receiving submissions?
-                <i class='fas fa-arrow-down small'></i>
-              </button>
-              {isShow && (
-                <div>
-                  <p>
-                    For Naming contests, you will start receiving your
-                    submissions within few minutes of launching your contest.
-                    Since our creatives are located across the globe, you can
-                    expect to receive submissions 24 X 7 throughout the duration
-                    of the brainstorming phase .
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-        </div> */}
-        <div>
-          <div type='button' onClick={this.handleButtonSwitch}>
-            {questionsAnswersData.map((item, index) => {
+            <ul>
+            {questionsAnswersData.map((item) => {
               return (
-                <ul>
-                  <li key={index.id}>
-                    <button>
+              
+                  <li key={item.id}>
+                    <button  type='button' onClick={this.handleButtonSwitch}>
                       {item.question}
                       <i class='fas fa-arrow-down small'></i>
                     </button>
                     {isShow && <p key={item.id}>{item.showText}</p>}
                   </li>
-                </ul>
+              
               );
             })}
+              </ul>
+          </div>
+        </div>
+        <div>
+          <br />
+          <h3>Buying From Marketplace</h3>
+          <div>
+         <ul>
+            {questionsAswersBuingData.map((item) => {
+              return (
+                
+                  <li key={item.id}>
+                    <button type='button' onClick={this.handleButtonSwitch}>
+                      {item.question}
+                      <i class='fas fa-arrow-down small'></i>
+                    </button>
+                    {isShow && <p key={item.id}>{item.showText}</p>}
+                  </li>
+              
+              );
+            })}
+              </ul>
+          </div>
+        </div>
+        <div>
+          <br />
+          <h3>Managed Contests</h3>
+          <div >
+           <ul>
+            {questionsAswersManagedData.map((item) => {
+              return (
+               
+                  <li key={item.id}>
+                    <button type='button' onClick={this.handleButtonSwitch}>
+                      {item.question}
+                      <i class='fas fa-arrow-down small'></i>
+                    </button>
+                    {isShow && <p key={item.id}>{item.showText}</p>}
+                  </li>
+              
+              );
+            })}
+              </ul>
+          </div>
+        </div> */}
+          <div>
+            <br />
+            <h3>For Creatives</h3>
+            <div>
+              <ul>
+                {questionsAswersForCreativesData.map(item => {
+                  return (
+                    <li>
+                      <button
+                        key={item.id}
+                        type='button'
+                        onClick={this.handleButtonSwitch}
+                      >
+                        {item.question}
+                        <i class='fas fa-arrow-down small'></i>
+                      </button>
+                      {isShow ? <p key={item.id}>{item.showText} </p> : null}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
