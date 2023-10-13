@@ -18,6 +18,7 @@ class GenuineLaunchingContest extends Component {
     const { isShow } = this.state;
     this.setState({ isShow: !isShow });
   };
+ 
 
   render () {
     const { isShow } = this.state;
@@ -92,23 +93,25 @@ class GenuineLaunchingContest extends Component {
             <br />
             <h3>For Creatives</h3>
             <div>
-              <ul>
-                {questionsAswersForCreativesData.map(item => {
+              <div>
+                {questionsAswersForCreativesData.map((item) => {
                   return (
-                    <li>
-                      <button
-                        key={item.id}
-                        type='button'
-                        onClick={this.handleButtonSwitch}
-                      >
+                    <div>
+                      <button key={item.id} onClick={this.handleButtonSwitch}>
                         {item.question}
                         <i class='fas fa-arrow-down small'></i>
+                      
                       </button>
-                      {isShow ? <p key={item.id}>{item.showText} </p> : null}
-                    </li>
+                      <div>
+                      {/* {isShow && <p key={item.id}>{item.showText}</p>} */}
+                      {isShow ? <p key={item.id}>{item.showText}</p> : null}
+                      </div>
+                    </div>
                   );
                 })}
-              </ul>
+
+          
+              </div>
             </div>
           </div>
         </div>

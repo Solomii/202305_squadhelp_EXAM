@@ -1,40 +1,68 @@
 .headerContainer
   display: flex
   flex-direction: column 
+  justify-content: center
+  align-items: center
   width: 100%
   border-bottom: 1px solid rgba(243, 244, 246)
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05)
 
-  .navContainerTest
+  .navContainer
     width: 100%
-    margin: 0 auto
     display: flex
     justify-content: space-around
     align-items: center
     background-color: #0f2e60
     border-bottom: 1px solid #ebebeb
-    @media(max-width: 920px)
-      justify-content: center
-    @media(max-width: 700px)
-      justify-content: flex-start
+   
+    .search 
+      width: 40%
+      padding: 10px
+      position: center
+      display: flex
+      @media(max-width: 750px)
+        display: none
 
-    input 
-     padding: 10px
-     border-radius: 10px
-     border: none
-     min-width: 500px
-     width: 100%
+      .searchTerm 
+        width: 100%
+        height: 36px
+        padding: 20px
+        border: none
+        border-right: none
+        padding: 10px 25px
+        height: 20px
+        border-radius: 5px 0 0 5px
+        outline: none
+        color: #4a4a4a
+
+      .searchTerm:focus::placeholder 
+        color: transparent
+
+      .searchButton 
+        margin-left: -3px
+        width: 40px
+        border: none
+        background: #fff
+        text-align: center
+        color: #4a4a4a
+        border-radius: 0 5px 5px 0
+        cursor: pointer
+        font-size: 10px
+        outline: none
 
     .startContestBtn
+      margin-bottom: 10px
       text-align: center
       max-width: 340px
-      padding: 10px 22px
-      border: 1px solid #e1e1e1
+      padding: 10px 8px
       color: #e1e1e1
       border-radius: 5px
-      font-size: 14px
-      font-weight: 400
-      margin-bottom: 10px
+      border: 1px solid #e1e1e1
+      font-size: 12px
+      font-weight: 500
+      cursor: pointer
+      @media(max-width: 1024px)
+        display: none
 
       &:hover
         color: #0f2e60
@@ -42,10 +70,11 @@
 
     .leftNav
       display: flex
+      align-items: center
+      justify-content: space-between
       padding: 20px 0px
-      @media(max-width: 750px)
+      @media(max-width: 639px)
         align-items: center
-        flex-direction: column
 
       .nav
         display: flex
@@ -59,25 +88,34 @@
           @media(max-width: 920px)
             padding: 0
           @media(max-width: 700px)
-            flex-direction: column
+            flex-direction: row
             align-items: flex-start
 
           &:last-child li
             ul
-              width: 200px
+              width: 150px
 
           li
             display: flex
             align-items: center
             justify-content: flex-start
             margin-right: 30px
-            @media(max-width: 700px)
+            @media(max-width: 400px)
               width: 100%
               padding: 0 15px
+            
+            .wrapperNavSvg 
+              display: flex
+
+              .spanHidden 
+                display: flex
+                margin-left: 5px
+                @media(max-width: 1024px)
+                  display: none
 
             &:hover
               span
-                color: #e1e1e1
+                color: #e1e1e1    
 
               ul
                 display: block
@@ -145,15 +183,16 @@
         display: flex
 
         ul
-          margin: 0
+          width: 100%
           list-style: none
           display: flex
           align-items: center
-          @media(max-width: 920px)
-            padding: 0
+          justify-content: center
           @media(max-width: 700px)
             flex-direction: column
             align-items: flex-start
+          @media(max-width: 920px)
+            padding: 0  
 
           &:last-child li
             ul
@@ -163,8 +202,8 @@
             display: flex
             align-items: center
             justify-content: flex-start
-            padding: 10px
-            margin-right: 50px
+            padding: 10px 15px
+            margin-right: 10px
             @media(max-width: 700px)
               width: 100%
               padding: 0 15px
@@ -172,6 +211,10 @@
             &:hover
               span
                 color: #377dff
+
+            span 
+              margin-right: 5px
+              color: #77838f
 
               ul
                 display: block
@@ -213,6 +256,8 @@
                 
             .linkAgencyExperience 
               text-decoration: none
+              border-right: 1px solid #e7eaf3
+              padding: 2px  15px 2px 0px
 
             span
               padding: 15px 0

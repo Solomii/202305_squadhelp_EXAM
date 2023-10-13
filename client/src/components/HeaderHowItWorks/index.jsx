@@ -3,6 +3,11 @@ import { withRouter } from 'react-router-dom';
 import styles from './HeaderHowItWorks.module.sass';
 import Logo from '../Logo';
 import CONSTANTS from '../../constants';
+import SvgPerson from '../icons/SvgPerson';
+import SvgPhone from '../icons/SvgPhone';
+import SvgHeart from '../icons/SvgHeart';
+import SvgVerticalLines from '../icons/SvgVerticalLines';
+import SvgArrowDown from '../icons/SvgArrowDown';
 
 class HeaderHowItWorks extends React.Component {
   startContests = () => {
@@ -15,20 +20,41 @@ class HeaderHowItWorks extends React.Component {
     }
     return (
       <div className={styles.headerContainer}>
-        <div className={styles.navContainerTest}>
+        <div className={styles.navContainer}>
           <Logo className={styles.logo} alt='blue_logo' />
-          <form>
-            <input type='text' placeholder='Search over 1000,000 names              &#x1F50D;'/>
-          </form>
+          <div className={styles.search}>
+            <input
+              type='text'
+              className={styles.searchTerm}
+              placeholder='Search over 1000,000 names'
+            ></input>
+            <button type='submit' className={styles.searchButton}>
+              <svg
+                class='sh-navbar--search-icon'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+                onclick='if (!window.__cfRLUnblockHandlers) return false; searchInPremiumDomains(this)'
+              >
+                <path
+                  strokelinecap='round'
+                  strokelinejoin='round'
+                  strokewidth='2'
+                  d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+                ></path>
+              </svg>
+            </button>
+          </div>
           <div className={styles.leftNav}>
             <nav className={styles.nav}>
               <ul>
                 <li>
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                    alt='menu'
-                  />
-                  <span>Account</span>
+                  <div className={styles.wrapperNavSvg}>
+                    <span>
+                      <SvgPerson />
+                    </span>
+                    <span className={styles.spanHidden}>Account</span>
+                  </div>
                   <ul>
                     <li>
                       <a href='http://www.google.com'>Login</a>
@@ -39,11 +65,12 @@ class HeaderHowItWorks extends React.Component {
                   </ul>
                 </li>
                 <li>
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                    alt='menu'
-                  />
-                  <span>Contacts</span>
+                  <div className={styles.wrapperNavSvg}>
+                    <span>
+                      <SvgPhone />
+                    </span>
+                    <span className={styles.spanHidden}>Contacts</span>
+                  </div>
                   <ul>
                     <li>
                       <a href='http://www.google.com'>(877) 355-3585</a>
@@ -60,33 +87,30 @@ class HeaderHowItWorks extends React.Component {
                   </ul>
                 </li>
                 <li>
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                    alt='menu'
-                  />
-                  <span>Favorites</span>
+                  <div className={styles.wrapperNavSvg}>
+                    <span>
+                      <SvgHeart />
+                    </span>
+                    <span className={styles.spanHidden}>Favorites</span>
+                  </div>
                 </li>
               </ul>
               <div
                 className={styles.startContestBtn}
                 onClick={this.startContests}
               >
-                START CONTEST
+                <span>START CONTEST</span>
               </div>
             </nav>
           </div>
         </div>
-
         <div className={styles.navBottomContainer}>
           <div className={styles.bottomNav}>
             <nav className={styles.nav}>
               <ul>
                 <li>
-                  <span>Name For Sale</span>
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                    alt='menu'
-                  />
+                  <span>Name&nbsp;For&nbsp;Sale</span>
+                  <SvgArrowDown />
                   <ul>
                     <li>
                       <a href='http://www.google.com'>
@@ -119,11 +143,8 @@ class HeaderHowItWorks extends React.Component {
                   </ul>
                 </li>
                 <li>
-                  <span>Naming Contests</span>
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                    alt='menu'
-                  />
+                  <span>Naming&nbsp;Contests</span>
+                  <SvgArrowDown />
                   <ul>
                     <li>
                       <a href='http://www.google.com'>Start A Contest</a>
@@ -152,11 +173,8 @@ class HeaderHowItWorks extends React.Component {
                   </ul>
                 </li>
                 <li>
-                  <span>Other Services</span>
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                    alt='menu'
-                  />
+                  <span>Other&nbsp;Services</span>
+                  <SvgArrowDown />
                   <ul>
                     <li>
                       <a href='http://www.google.com'>Logos</a>
@@ -183,15 +201,12 @@ class HeaderHowItWorks extends React.Component {
                     href='http://www.google.com'
                     className={styles.linkAgencyExperience}
                   >
-                    <span>Agency Experience</span>
+                    <span>Agency&nbsp;Experience</span>
                   </a>
                 </li>
                 <li>
                   <span>Resources</span>
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
-                    alt='menu'
-                  />
+                  <SvgArrowDown />
                   <ul>
                     <li>
                       <a href='http://www.google.com'>
