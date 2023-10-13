@@ -11,9 +11,9 @@
     width: 90%
     display: flex
     justify-content: center
-    flex-direction: column
+    align-items: center
     padding: 30px 10px
-
+    
     span
      padding: 10px 15px
      font-size: 0.6875rem
@@ -25,7 +25,7 @@
 
     h1
      margin-bottom: 8px
-     width: 40%
+     width: 80%
      color: #1e2022
      font-size: 40px
      font-weight: 600
@@ -33,7 +33,7 @@
      
 
     p
-     width: 40%
+     width: 90%
      color: #77838f
      line-height: 1.7
      font-size: 1rem
@@ -41,21 +41,30 @@
     
     div 
       margin: 20px 0px
+       
+      div 
+        width: 100%
+        a
+          padding: 15px 18px
+          color: #fff
+          background-color: #377dff
+          border-color: #377dff
+          text-decoration: none
+          border-radius: 25px
      
-      a
-        padding: 15px 18px
-        color: #fff
-        background-color: #377dff
-        border-color: #377dff
-        text-decoration: none
-        border-radius: 25px
-     
-        i
-          font-size: 12px
-          margin: 8px
+          i
+            font-size: 12px
+            margin: 8px
+
+    .wrapperMobileImage
+        display: none
+        @media (min-width: 992px)
+          display: flex
+      
 
   .genuineWaysBox
     text-align: center
+     width: 90%
 
     span
      margin: 12px 0px
