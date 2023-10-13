@@ -2,12 +2,15 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import styles from './HeaderHowItWorks.module.sass';
 import Logo from '../Logo';
-import CONSTANTS from '../../constants';
 import SvgPerson from '../icons/SvgPerson';
 import SvgPhone from '../icons/SvgPhone';
 import SvgHeart from '../icons/SvgHeart';
 import SvgVerticalLines from '../icons/SvgVerticalLines';
 import SvgArrowDown from '../icons/SvgArrowDown';
+import SvgGrayChatImage from '../icons/SvgGrayChat';
+import SvgEmail from '../icons/SvgEmail';
+import SvgDesk from '../icons/SvgDesk';
+import SvgGrayPhone from '../icons/SvgGrayPhone';
 
 class HeaderHowItWorks extends React.Component {
   startContests = () => {
@@ -45,16 +48,13 @@ class HeaderHowItWorks extends React.Component {
               </svg>
             </button>
           </div>
+
           <div className={styles.leftNav}>
             <nav className={styles.nav}>
               <ul>
                 <li>
-                  <div className={styles.wrapperNavSvg}>
-                    <span>
-                      <SvgPerson />
-                    </span>
-                    <span className={styles.spanHidden}>Account</span>
-                  </div>
+                  <SvgPerson />
+                  <span className={styles.spanHidden}>Account</span>
                   <ul>
                     <li>
                       <a href='http://www.google.com'>Login</a>
@@ -65,34 +65,49 @@ class HeaderHowItWorks extends React.Component {
                   </ul>
                 </li>
                 <li>
-                  <div className={styles.wrapperNavSvg}>
-                    <span>
-                      <SvgPhone />
-                    </span>
-                    <span className={styles.spanHidden}>Contacts</span>
-                  </div>
+                  <SvgPhone />
+                  <span className={styles.spanHidden}>Contacts</span>
                   <ul>
                     <li>
-                      <a href='http://www.google.com'>(877) 355-3585</a>
+                      <a href='http://www.google.com'>
+                        <span>
+                          <SvgGrayPhone />
+                        </span>{' '}
+                        (877) 355-3585
+                      </a>
                     </li>
                     <li>
-                      <a href='http://www.google.com'>Chat</a>
+                      <a href='http://www.google.com'>
+                        {' '}
+                        <span>
+                          <SvgGrayChatImage />
+                        </span>{' '}
+                        Chat
+                      </a>
                     </li>
                     <li>
-                      <a href='http://www.google.com'>Email</a>
+                      <a href='http://www.google.com'>
+                        {' '}
+                        <span>
+                          <SvgEmail />
+                        </span>{' '}
+                        Email
+                      </a>
                     </li>
                     <li>
-                      <a href='http://www.google.com'>Help Desk</a>
+                      <a href='http://www.google.com'>
+                        {' '}
+                        <span>
+                          <SvgDesk />
+                        </span>{' '}
+                        Help Desk
+                      </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <div className={styles.wrapperNavSvg}>
-                    <span>
-                      <SvgHeart />
-                    </span>
-                    <span className={styles.spanHidden}>Favorites</span>
-                  </div>
+                  <SvgHeart />
+                  <span className={styles.spanHidden}>Favorites</span>
                 </li>
               </ul>
               <div
