@@ -10,7 +10,7 @@ const SvgMobileImage = props => (
       enableBackground: 'new 0 0 1342.8 1166.1',
     }}
     viewBox='0 0 1342.8 1166.1'
-    width='350px'
+    width='500px'
     {...props}
   >
     <style>

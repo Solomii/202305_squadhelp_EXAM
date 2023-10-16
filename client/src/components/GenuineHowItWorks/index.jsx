@@ -41,10 +41,10 @@ const GenuineHowItWorks = () => {
           <p>
             Squadhelp offers 3 ways to get you a perfect name for your business.
           </p>
-          {/* <GenuineWaysToUse /> */}
+          <GenuineWaysToUse />
         </div>
       </div>
-      {/* <GenuineNamingContestsWork /> */}
+      <GenuineNamingContestsWork />
       <GenuineLaunchingContest />
       <GenuineStartContest />
 

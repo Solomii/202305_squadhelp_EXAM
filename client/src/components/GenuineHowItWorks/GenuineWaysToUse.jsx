@@ -4,7 +4,7 @@ import CONSTANTS from '../../constants';
 
 class GenuineWaysToUse extends Component {
   genuineWayToUseItemsRender = item => (
-    <div key={item.title}>
+    <div key={item.title} >
       <p>{item.image}</p>
       <h3>{item.title}</h3>
       <p>{item.text}</p>

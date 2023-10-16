@@ -9,7 +9,7 @@ const HowItWorks = () => {
     <>
       <HeaderHowItWorks />
       <GenuineHowItWorks/>
-      {/* <FooterHowItWorks /> */}
+      <FooterHowItWorks />
     </>
   );
 };
