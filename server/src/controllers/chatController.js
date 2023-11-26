@@ -155,7 +155,7 @@ module.exports.getPreview = async (req, res, next) => {
       interlocutors.push(conversation.participants.find(
         (participant) => participant !== req.tokenData.userId));
     });
-    const senders = await db.Users.findAll({
+    const senders = await db.User.findAll({
       where: {
         id: interlocutors,
       },
@@ -249,7 +249,7 @@ module.exports.addNewChatToCatalog = async (req, res, next) => {
 };
 
 module.exports.removeChatFromCatalog = async (req, res, next) => {
-  try {
+  try { //// work here!!!!
     const catalog = await Catalog.findOneAndUpdate({
       _id: req.body.catalogId,
       userId: req.tokenData.userId,

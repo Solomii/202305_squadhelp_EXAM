@@ -31,7 +31,7 @@ const initialState = {
 
 //---------- getPreviewChat
 export const getPreviewChat = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/getPreviewChat`,
+  key: `${CHAT_SLICE_NAME}/preview-chat`,
   thunk: async () => {
     const { data } = await restController.getPreviewChat();
     return data;
@@ -52,7 +52,7 @@ const getPreviewChatExtraReducers = createExtraReducers({
 
 //---------- getDialogMessages
 export const getDialogMessages = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/getDialogMessages`,
+  key: `${CHAT_SLICE_NAME}/dialog-messages`,
   thunk: async payload => {
     const { data } = await restController.getDialog(payload);
     return data;
@@ -74,7 +74,7 @@ const getDialogMessagesExtraReducers = createExtraReducers({
 
 //---------- sendMessage
 export const sendMessage = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/sendMessage`,
+  key: `${CHAT_SLICE_NAME}/send-message`,
   thunk: async payload => {
     const { data } = await restController.newMessage(payload);
     return data;
@@ -114,7 +114,7 @@ const sendMessageExtraReducers = createExtraReducers({
 
 //---------- changeChatFavorite
 export const changeChatFavorite = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/changeChatFavorite`,
+  key: `${CHAT_SLICE_NAME}/change-chat-favorite`,
   thunk: async payload => {
     const { data } = await restController.changeChatFavorite(payload);
     return data;
@@ -139,7 +139,7 @@ const changeChatFavoriteExtraReducers = createExtraReducers({
 
 //---------- changeChatBlock
 export const changeChatBlock = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/changeChatBlock`,
+  key: `${CHAT_SLICE_NAME}/change-chat-block`,
   thunk: async payload => {
     const { data } = await restController.changeChatBlock(payload);
     return data;
@@ -164,7 +164,7 @@ const changeChatBlockExtraReducers = createExtraReducers({
 
 //---------- getCatalogList
 export const getCatalogList = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/getCatalogList`,
+  key: `${CHAT_SLICE_NAME}/getCatalogList`, //!!!!!!!!!!
   thunk: async payload => {
     const { data } = await restController.getCatalogList(payload);
     return data;
@@ -182,7 +182,7 @@ const getCatalogListExtraReducers = createExtraReducers({
 
 //---------- addChatToCatalog
 export const addChatToCatalog = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/addChatToCatalog`,
+  key: `${CHAT_SLICE_NAME}/add-new-chat-to-catalog`,
   thunk: async payload => {
     const { data } = await restController.addChatToCatalog(payload);
     return data;
@@ -210,7 +210,7 @@ const addChatToCatalogExtraReducers = createExtraReducers({
 
 //---------- createCatalog
 export const createCatalog = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/createCatalog`,
+  key: `${CHAT_SLICE_NAME}/create-catalog`,
   thunk: async payload => {
     const { data } = await restController.createCatalog(payload);
     return data;
@@ -231,7 +231,7 @@ const createCatalogExtraReducers = createExtraReducers({
 
 //---------- deleteCatalog
 export const deleteCatalog = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/deleteCatalog`,
+  key: `${CHAT_SLICE_NAME}/delete-catalog`,
   thunk: async payload => {
     await restController.deleteCatalog(payload);
     return payload;
@@ -255,7 +255,7 @@ const deleteCatalogExtraReducers = createExtraReducers({
 
 //---------- removeChatFromCatalog
 export const removeChatFromCatalog = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/removeChatFromCatalog`,
+  key: `${CHAT_SLICE_NAME}/remove-chat-from-catalog`,
   thunk: async payload => {
     const { data } = await restController.removeChatFromCatalog(payload);
     return data;
@@ -282,7 +282,7 @@ const removeChatFromCatalogExtraReducers = createExtraReducers({
 
 //---------- changeCatalogName
 export const changeCatalogName = decorateAsyncThunk({
-  key: `${CHAT_SLICE_NAME}/changeCatalogName`,
+  key: `${CHAT_SLICE_NAME}/change-catalog-name`, /// !!!!!!
   thunk: async payload => {
     const { data } = await restController.changeCatalogName(payload);
     return data;
