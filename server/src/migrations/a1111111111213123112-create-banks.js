@@ -23,7 +23,7 @@ module.exports = {
         type: Sequelize.DECIMAL,
         allowNull: false,
         defaultValue: 0,
-      },
+      }
     })
       .then(() => queryInterface.addConstraint('Banks', {
         type: 'check',
