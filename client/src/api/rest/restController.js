@@ -1,33 +1,33 @@
-import http from '../interceptor';
+import httpClient from '../interceptor';
 
-export const registerRequest = data => http.post('registration', data);
-export const loginRequest = data => http.post('login', data);
-export const getUser = () => http.post('getUser');
-export const updateContest = data => http.post('updateContest', data);
-export const setNewOffer = data => http.post('setNewOffer', data);
-export const setOfferStatus = data => http.post('setOfferStatus', data);
+export const registerRequest = data => httpClient.post('registration', data);
+export const loginRequest = data => httpClient.post('login', data);
+export const getUser = () => httpClient.get('user');
+export const updateContest = data => httpClient.post('update-contest', data);
+export const setNewOffer = data => httpClient.post('set-new-offer', data);
+export const setOfferStatus = data => httpClient.post('set-offer-status', data);
 export const downloadContestFile = data =>
-  http.get(`downloadFile/${data.fileName}`);
-export const payMent = data => http.post('pay', data.formData);
-export const changeMark = data => http.post('changeMark', data);
-export const getPreviewChat = () => http.post('getPreview');
-export const getDialog = data => http.post('getChat', data);
-export const dataForContest = data => http.post('dataForContest', data);
-export const cashOut = data => http.post('cashout', data);
-export const updateUser = data => http.post('updateUser', data);
-export const newMessage = data => http.post('newMessage', data);
-export const changeChatFavorite = data => http.post('favorite', data);
-export const changeChatBlock = data => http.post('blackList', data);
-export const getCatalogList = data => http.post('getCatalogs', data);
-export const addChatToCatalog = data => http.post('addNewChatToCatalog', data);
-export const createCatalog = data => http.post('createCatalog', data);
-export const deleteCatalog = data => http.post('deleteCatalog', data);
+  httpClient.get(`download-file/${data.fileName}`);
+export const payMent = data => httpClient.post('pay', data.formData);
+export const changeMark = data => httpClient.post('change-mark', data);
+export const getPreviewChat = () => httpClient.get('preview');
+export const getDialog = data => httpClient.get('chat', data);
+export const dataForContest = data => httpClient.post('data-for-contest', data); 
+export const cashOut = data => httpClient.post('cashout', data);
+export const updateUser = data => httpClient.post('update-user', data);
+export const newMessage = data => httpClient.post('new-message', data);
+export const changeChatFavorite = data => httpClient.post('favorite', data);
+export const changeChatBlock = data => httpClient.post('black-list', data);
+export const getCatalogList = data => httpClient.get('catalogs', data);
+export const addChatToCatalog = data => httpClient.post('add-new-chat-to-catalog', data);
+export const createCatalog = data => httpClient.post('create-catalog', data);
+export const deleteCatalog = data => httpClient.post('delete-catalog', data);
 export const removeChatFromCatalog = data =>
-  http.post('removeChatFromCatalog', data);
-export const changeCatalogName = data => http.post('updateNameCatalog', data);
+  httpClient.post('remove-chat-from-catalog', data);
+export const changeCatalogName = data => httpClient.put('update-name-catalog', data);
 export const getCustomersContests = data =>
-  http.post(
-    'getCustomersContests',
+  httpClient.post(
+    'customers-contests',
     { limit: data.limit, offset: data.offset },
     {
       headers: {
@@ -45,7 +45,7 @@ export const getActiveContests = ({
   awardSort,
   ownEntries,
 }) =>
-  http.post('getAllContests', {
+  httpClient.post('contests', {
     offset,
     limit,
     typeIndex,
@@ -56,7 +56,7 @@ export const getActiveContests = ({
   });
 
 export const getContestById = data =>
-  http.get('getContestById', {
+  httpClient.get('contest-by-id', { 
     headers: {
       contestId: data.contestId,
     },

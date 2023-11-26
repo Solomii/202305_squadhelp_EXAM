@@ -13,7 +13,7 @@ const initialState = {
 };
 
 export const getUser = createAsyncThunk(
-  `${USER_SLICE_NAME}/getUser`,
+  `${USER_SLICE_NAME}/user`,
   async (replace, { rejectWithValue }) => {
     try {
       const { data } = await restController.getUser();
@@ -32,7 +32,7 @@ export const getUser = createAsyncThunk(
 );
 
 export const updateUser = createAsyncThunk(
-  `${USER_SLICE_NAME}/updateUser`,
+  `${USER_SLICE_NAME}/update-user`,
   async (payload, { rejectWithValue, dispatch }) => {
     try {
       const { data } = await restController.updateUser(payload);

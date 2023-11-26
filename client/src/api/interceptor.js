@@ -2,11 +2,11 @@ import axios from 'axios';
 import CONTANTS from '../constants';
 import history from '../browserHistory';
 
-const instance = axios.create({
+const httpClient = axios.create({
   baseURL: CONTANTS.BASE_URL,
 });
 
-instance.interceptors.request.use(
+httpClient.interceptors.request.use(
   config => {
     const token = window.localStorage.getItem(CONTANTS.ACCESS_TOKEN);
     if (token) {
@@ -17,7 +17,7 @@ instance.interceptors.request.use(
   err => Promise.reject(err)
 );
 
-instance.interceptors.response.use(
+httpClient.interceptors.response.use(
   response => {
     if (response.data.token) {
       window.localStorage.setItem(CONTANTS.ACCESS_TOKEN, response.data.token);
@@ -37,4 +37,4 @@ instance.interceptors.response.use(
   }
 );
 
-export default instance;
+export default httpClient;

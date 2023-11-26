@@ -26,7 +26,7 @@ const initialState = {
 
 //---------- getContestById
 export const getContestById = decorateAsyncThunk({
-  key: `${CONTEST_BY_ID_SLICE_NAME}/getContest`,
+  key: `${CONTEST_BY_ID_SLICE_NAME}/contest`,
   thunk: async payload => {
     const { data } = await restController.getContestById(payload);
     const { Offers } = data;
@@ -54,7 +54,7 @@ const getContestByIdExtraReducers = createExtraReducers({
 
 //---------- addOffer
 export const addOffer = decorateAsyncThunk({
-  key: `${CONTEST_BY_ID_SLICE_NAME}/addOffer`,
+  key: `${CONTEST_BY_ID_SLICE_NAME}/add-offer`, ///!!!!now
   thunk: async payload => {
     const { data } = await restController.setNewOffer(payload);
     return data;
@@ -74,7 +74,7 @@ const addOfferExtraReducers = createExtraReducers({
 
 //---------- setOfferStatus
 export const setOfferStatus = decorateAsyncThunk({
-  key: `${CONTEST_BY_ID_SLICE_NAME}/setOfferStatus`,
+  key: `${CONTEST_BY_ID_SLICE_NAME}/set-offer-status`,
   thunk: async payload => {
     const { data } = await restController.setOfferStatus(payload);
     return data;
@@ -103,7 +103,7 @@ const setOfferStatusExtraReducers = createExtraReducers({
 
 //---------- changeMark
 export const changeMark = decorateAsyncThunk({
-  key: `${CONTEST_BY_ID_SLICE_NAME}/changeMark`,
+  key: `${CONTEST_BY_ID_SLICE_NAME}/change-mark`,
   thunk: async payload => {
     const { data } = await restController.changeMark(payload);
     return { data, offerId: payload.offerId, mark: payload.mark };
