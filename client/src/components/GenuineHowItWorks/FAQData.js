@@ -1,4 +1,4 @@
-export const questionsAnswersData = [
+export const faqLaunchingData = [
   {
     id: 0,
     question: 'How long does it take to start receiving submissions?',
@@ -56,7 +56,7 @@ export const questionsAnswersData = [
   },
 ];
 
-export const questionsAswersBuingData = [
+export const faqBuingData = [
   {
     id: 0,
     question: "What's included with a Domain Purchase?",
@@ -85,48 +85,48 @@ export const questionsAswersBuingData = [
   },
 ];
 
-export const questionsAswersManagedData = [
+export const faqManagedData = [
   {
-    id: 0,
+    id: 1,
     question: 'What are Managed Contests?',
     showText:
       'The "Managed" option is a fully managed service by Squadhelp Branding experts. It includes a formal brief preparation by Squadhelp team and management of your contest. Managed Contests are a great fit for companies that are looking for an "Agency" like experience and they do not want to manage the contest directly.Our branding team has directly managed hundreds of branding projects and has learned several best practices that lead to successful project outcomes. Our team will apply all best practices towards the management of your branding project.',
   },
   {
-    id: 1,
+    id: 2,
     question: " What's a typical timeline for a Managed Contest?",
     showText:
       'The overall process takes 12-13 days: 1)The Managed projects start with a project kick-off call with your Branding Consultant. You can schedule this call online immediately after making your payment.2)After your kick-off call, the Branding consultant will write your project brief and send for your approval within 1 business day. 3)Upon your approval, the contest will go live. The branding consultant will help manage your project throughout the brainstorming phase (typically 5 days).4)Upon the completion of brainstorming phase, the branding consultant will work with you to test the top 6 names from your Shortlist (3-5 Days). In addition, the branding consultant will coordinate the detailed Trademark screening (1-3 days)',
   },
   {
-    id: 2,
+    id: 3,
     question: 'How much do Managed Contests cost?',
     showText:
       'We offer two levels of Managed Contests. Standard ($1499) and Enterprise ($2999). The Enterprise managed contest includes: ',
   },
   {
-    id: 3,
+    id: 4,
     question: 'Where are the Branding Consultants located',
     showText:
       'All our branding consultants are based in in our Headquarters (Hoffman Estates, IL). Our branding consultants have many years of experience in managing hundreds of branding projects for companies ranging from early stage startups to Fortune 500 corporations.',
   },
 ];
 
-export const questionsAswersForCreativesData = [
+export const faqForCreativesData = [
   {
-    id: 0,
+    id: 1,
     question: 'Can anyone join your platform?',
     showText:
       'We are open to anyone to signup. However, we have an extensive "Quality Scoring" process which ensures that high quality creatives have the ability to continue to participate in the platform. On the other hand, we limit the participation from those creatives who do not consistently receive high ratings.',
   },
   {
-    id: 1,
+    id: 2,
     question: 'Can I start participating immediately upon signing up?',
     showText:
       'When you initially signup, you are assigned few contests to assess your overall quality of submissions. Based upon the quality of your submissions, you will continue to be assigned additional contests. Once you have received enough high ratings on your submissions, your account will be upgraded to "Full Access", so that you can begin participating in all open contests.',
   },
   {
-    id: 2,
+    id: 3,
     question: 'How Do I Get Paid?',
     showText:
       'We handle creative payouts via Paypal or Payoneer. Depending upon your country of residence, we may require additional documentation to verify your identity as well as your Tax status.',

@@ -1,123 +1,25 @@
-import React, { Component, useState } from 'react';
-import styles from './GenuineHowItWorks.module.sass';
-import {
-  questionsAnswersData,
-  questionsAswersBuingData,
-  questionsAswersManagedData,
-  questionsAswersForCreativesData,
-} from './questionAnswerData';
+import React from 'react';
+import styles from './FaqBox.module.sass';
+import FaqCreativity from './GenuineFaqs';
 
-class GenuineLaunchingContest extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      isShow: false,
-    };
-  }
-  handleButtonSwitch = () => {
-    const { isShow } = this.state;
-    this.setState({ isShow: !isShow });
-  };
- 
-
-  render () {
-    const { isShow } = this.state;
-    return (
-      <div>
-        {/* <div>blue div Launching A constest</div> */}
-        {/* <div>blue div Launching A constest</div> */}
-        <div>
-          {/* <div>
-          <h3>Launching A Contest</h3>
-          <div>
-            <ul>
-            {questionsAnswersData.map((item) => {
-              return (
-              
-                  <li key={item.id}>
-                    <button  type='button' onClick={this.handleButtonSwitch}>
-                      {item.question}
-                      <i class='fas fa-arrow-down small'></i>
-                    </button>
-                    {isShow && <p key={item.id}>{item.showText}</p>}
-                  </li>
-              
-              );
-            })}
-              </ul>
-          </div>
-        </div>
-        <div>
-          <br />
-          <h3>Buying From Marketplace</h3>
-          <div>
-         <ul>
-            {questionsAswersBuingData.map((item) => {
-              return (
-                
-                  <li key={item.id}>
-                    <button type='button' onClick={this.handleButtonSwitch}>
-                      {item.question}
-                      <i class='fas fa-arrow-down small'></i>
-                    </button>
-                    {isShow && <p key={item.id}>{item.showText}</p>}
-                  </li>
-              
-              );
-            })}
-              </ul>
-          </div>
-        </div>
-        <div>
-          <br />
-          <h3>Managed Contests</h3>
-          <div >
-           <ul>
-            {questionsAswersManagedData.map((item) => {
-              return (
-               
-                  <li key={item.id}>
-                    <button type='button' onClick={this.handleButtonSwitch}>
-                      {item.question}
-                      <i class='fas fa-arrow-down small'></i>
-                    </button>
-                    {isShow && <p key={item.id}>{item.showText}</p>}
-                  </li>
-              
-              );
-            })}
-              </ul>
-          </div>
-        </div> */}
-          <div>
-            <br />
-            <h3>For Creatives</h3>
-            <div>
-              <div>
-                {questionsAswersForCreativesData.map((item) => {
-                  return (
-                    <div>
-                      <button key={item.id} onClick={this.handleButtonSwitch}>
-                        {item.question}
-                        <i class='fas fa-arrow-down small'></i>
-                      
-                      </button>
-                      <div>
-                      {/* {isShow && <p key={item.id}>{item.showText}</p>} */}
-                      {isShow ? <p key={item.id}>{item.showText}</p> : null}
-                      </div>
-                    </div>
-                  );
-                })}
-
-          
-              </div>
-            </div>
-          </div>
-        </div>
+const GenuineFaqBox = () => {
+  return (
+    <div className={styles.faqBoxs}>
+      <div className={styles.faqBoxLeft}>
+        <nav className={styles.navigation}>
+          <ul>
+            <li>Launching A Contest</li>
+            <li>Buying From Marketplace</li>
+            <li>Managed Contest</li>
+            <li>For Creatives</li>
+          </ul>
+        </nav>
       </div>
-    );
-  }
-}
+      <div className={styles.faqBoxRight}>
+        <FaqCreativity />
+      </div>
+    </div>
+  );
+};
 
-export default GenuineLaunchingContest;
+export default GenuineFaqBox;
