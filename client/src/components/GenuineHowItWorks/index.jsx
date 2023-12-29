@@ -3,7 +3,7 @@ import styles from './GenuineHowItWorks.module.sass';
 import GenuineWaysToUse from './GenuineWaysToUse';
 import GenuineNamingContestsWork from './GenuineNaminingContestsWork';
 import GenuineStartContest from './GenuineStartContest';
-import GenuineLaunchingContest from './GenuineLaunchingContest';
+import GenuineFaqsContent from './GenuineFaqsContent';
 import SvgMobileImage from '../icons/SvgMobileImage';
 
 const GenuineHowItWorks = () => {
@@ -45,10 +45,8 @@ const GenuineHowItWorks = () => {
         </div>
       </div>
       <GenuineNamingContestsWork />
-      <GenuineLaunchingContest />
+      <GenuineFaqsContent />
       <GenuineStartContest />
-
-      {/* the end genuine page */}
     </div>
   );
 };

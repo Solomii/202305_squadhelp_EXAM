@@ -7,7 +7,7 @@ import {
   faqForCreativesData,
 } from './FAQData';
 
-const FaqCreativity = () => {
+const FaqsBoxs = () => {
   const [click, setClick] = useState(false);
 
   const handleActiveClick = index => {
@@ -60,9 +60,9 @@ const FaqCreativity = () => {
                 )}
               </span>
               {click === index ? (
-               <p key={index} className={styles.answers}>
-               {item.showText}
-             </p>
+                <p key={index} className={styles.answers}>
+                  {item.showText}
+                </p>
               ) : null}
             </button>
           </div>
@@ -79,7 +79,6 @@ const FaqCreativity = () => {
             >
               {item.question}
               <span>
-                {' '}
                 {click === index ? (
                   <i class='fas fa-arrow-down small'></i>
                 ) : (
@@ -88,8 +87,8 @@ const FaqCreativity = () => {
               </span>
               {click === index ? (
                 <p key={index} className={styles.answers}>
-                {item.showText}
-              </p>
+                  {item.showText}
+                </p>
               ) : null}
             </button>
           </div>
@@ -113,9 +112,9 @@ const FaqCreativity = () => {
                 )}
               </span>
               {click === index ? (
-              <p key={index} className={styles.answers}>
-              {item.showText}
-            </p>
+                <p key={index} className={styles.answers}>
+                  {item.showText}
+                </p>
               ) : null}
             </button>
           </div>
@@ -125,4 +124,4 @@ const FaqCreativity = () => {
   );
 };
 
-export default FaqCreativity;
+export default FaqsBoxs;

@@ -20,7 +20,7 @@ const GenuineNaminingContestsWork = () => {
             ))}
           </ul>
         </div>
-        <div>
+        <div className={styles.wrapperPersonWithLaptop}>
           <SvgPersonWithLaptop />
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './FaqBox.module.sass';
-import FaqCreativity from './GenuineFaqs';
+import FaqsBoxs from './GenuineFaqsBoxs';
 
-const GenuineFaqBox = () => {
+const GenuineFaqsContent = () => {
   return (
     <div className={styles.faqBoxs}>
       <div className={styles.faqBoxLeft}>
@@ -16,10 +16,10 @@ const GenuineFaqBox = () => {
         </nav>
       </div>
       <div className={styles.faqBoxRight}>
-        <FaqCreativity />
+        <FaqsBoxs />
       </div>
     </div>
   );
 };
 
-export default GenuineFaqBox;
+export default GenuineFaqsContent;
